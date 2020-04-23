@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OxygenContoller : MonoBehaviour
+public class OxygenController : MonoBehaviour
 {
     private GameController myGameController;
 
