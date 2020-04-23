@@ -48,7 +48,7 @@ MonoBehaviour:
   myPlant: {fileID: 0}
   spaceShip: {fileID: 0}
   plantLand: {fileID: 0}
-  timePerQuarter: 10
+  secPerQuarter: 15
   dayStartHour: 7
   dayEndHour: 23
   curDay: 1

@@ -515,37 +515,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1218497701}
     m_Modifications:
-    - target: {fileID: 919145309689886411, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -9063191298049891625, guid: 3a7723fa27e5cad46a6cfdd59ac7fbfb,
-        type: 3}
-    - target: {fileID: 919145309689886411, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 919145309689886411, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 919145309689886411, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919145309689886411, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529485168338679558, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: curHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7591043600786894692, guid: 31ea8c37761cf6c4cadfb577fe73756a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -610,11 +579,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7973312533664384827, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ea8c37761cf6c4cadfb577fe73756a, type: 3}
@@ -793,16 +757,6 @@ PrefabInstance:
       propertyPath: plantLand
       value: 
       objectReference: {fileID: 1888654294}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: dayEndHour
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: timePerQuarter
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8760379080133693073, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: m_LocalPosition.x
