@@ -10,13 +10,14 @@ public class GameController : MonoBehaviour
     [Header("Controller")]
     [SerializeField] private OxygenController myOxygenController;
     [SerializeField] private UIController myUIController;
+    [SerializeField] private Plant myPlant;
 
     [Header("Scene")]
     [SerializeField] private GameObject spaceShip;
     [SerializeField] private GameObject plantLand;  
 
     [Header("Time")]
-    [SerializeField] private float timePerQuarter = 15.0f;
+    [SerializeField] private float secPerQuarter = 15.0f; //Seconds per 15 mins in game
     [SerializeField] private int dayStartHour = 7;
     [SerializeField] private int dayEndHour = 23;
     [SerializeField] private int curDay;
@@ -53,9 +54,9 @@ public class GameController : MonoBehaviour
         if (timePassing)
         {
             timer += Time.deltaTime;
-            if (timer >= timePerQuarter)
+            if (timer >= secPerQuarter)
             {
-                timer -= timePerQuarter;
+                timer -= secPerQuarter;
                 curMin += 15;
                 if (curMin == 60)
                 {
@@ -79,6 +80,7 @@ public class GameController : MonoBehaviour
         ++curDay;
         myUIController.updateDayText();
         myOxygenController.addOxygen(dailyOxygenSupply);
+        myPlant.dayPassed();
     }
 
     public void changeScene(GameScene scene)

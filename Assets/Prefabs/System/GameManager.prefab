@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myOxygenController: {fileID: 0}
   myUIController: {fileID: 0}
+  myPlant: {fileID: 0}
   spaceShip: {fileID: 0}
   plantLand: {fileID: 0}
   timePerQuarter: 10
