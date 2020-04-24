@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 3a7723fa27e5cad46a6cfdd59ac7fbfb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9063191298049891625
+    second: tempPlant_0
+  - first:
+      213: 6583882303887417303
+    second: tempPlant_1
+  - first:
+      213: -3407318556579411244
+    second: tempPlant_2
+  - first:
+      213: 9005756719447383286
+    second: tempPlant_3
+  - first:
+      213: -6133207130507192876
+    second: tempPlant_4
+  - first:
+      213: 8307096232246049729
+    second: tempPlant_5
+  - first:
+      213: 3838375891146859064
+    second: tempPlant_6
+  - first:
+      213: 3183741747219026174
+    second: tempPlant_7
+  - first:
+      213: 691672423894796248
+    second: tempPlant_8
+  - first:
+      213: 8000884201394970787
+    second: tempPlant_9
+  - first:
+      213: -4212223638229119534
+    second: tempPlant_10
+  - first:
+      213: 4501474892272025157
+    second: tempPlant_11
+  - first:
+      213: -4867117358032090305
+    second: tempPlant_0
+  - first:
+      213: 7405295675470572580
+    second: tempPlant_1
+  - first:
+      213: -2695420747251746611
+    second: tempPlant_2
+  - first:
+      213: 2794646529076393015
+    second: tempPlant_3
+  - first:
+      213: 2801623160807840826
+    second: tempPlant_4
+  - first:
+      213: -6037980024910633522
+    second: tempPlant_5
+  - first:
+      213: 2963888610102383848
+    second: tempPlant_6
+  - first:
+      213: 7549657346850387389
+    second: tempPlant_7
+  - first:
+      213: 7581969260671538442
+    second: tempPlant_8
+  - first:
+      213: -2050987153558934139
+    second: tempPlant_9
+  - first:
+      213: -4612419976374401680
+    second: tempPlant_10
+  - first:
+      213: -2382381127015918454
+    second: tempPlant_11
+  - first:
+      213: 4347120497427241261
+    second: tempPlant_12
+  - first:
+      213: -4232233398596741978
+    second: tempPlant_13
+  - first:
+      213: 7479039973850650168
+    second: tempPlant_14
+  - first:
+      213: 802958144762093402
+    second: tempPlant_15
+  - first:
+      213: 4623265276582989383
+    second: tempPlant_16
+  - first:
+      213: 4741906816917448535
+    second: tempPlant_17
+  - first:
+      213: 3644401596366817176
+    second: tempPlant_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tempPlant_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 253
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b0c5acc86847cb0800000000000000
+      internalID: -4867117358032090305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 110
+        height: 253
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ce8219e25e4c660800000000000000
+      internalID: 7405295675470572580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 106
+        height: 253
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc877df7c11f79ad0800000000000000
+      internalID: -2695420747251746611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_3
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 0
+        width: 94
+        height: 253
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7347066263498c620800000000000000
+      internalID: 2794646529076393015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_4
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 48
+        width: 93
+        height: 205
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c557ecb6d51e620800000000000000
+      internalID: 2801623160807840826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 67
+        height: 45
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec52c4e6829c43ca0800000000000000
+      internalID: -6037980024910633522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 66
+        height: 45
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e49afeccf8d12920800000000000000
+      internalID: 2963888610102383848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 67
+        height: 45
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db57fee6b55c5c860800000000000000
+      internalID: 7549657346850387389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tempPlant_8
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 0
+        width: 66
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0512402fd0983960800000000000000
+      internalID: 7581969260671538442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
