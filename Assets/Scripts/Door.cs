@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameController.GameScene targetScene = GameController.GameScene.SpaceShip;
-    [SerializeField] private GameObject plantInfoMenu;
+    //[SerializeField] private GameObject plantInfoMenu;
     private GameController myGameController;
 
     // Start is called before the first frame update
@@ -23,11 +23,13 @@ public class Door : MonoBehaviour
     private void OnMouseDown()
     {
         myGameController.changeScene(targetScene);
+        /*
         if(targetScene == GameController.GameScene.PlantLand){
             plantInfoMenu.SetActive(true);
         } else {
             plantInfoMenu.SetActive(false);
         }
+        */
     }
 
 }

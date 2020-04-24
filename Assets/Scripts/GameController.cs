@@ -43,7 +43,6 @@ public class GameController : MonoBehaviour
         myWeatherController.changeWeather();
         curMin = 0;
         curDay = 1;
-        timePassing = true;
     }
 
     // Update is called once per frame
