@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b64282ef524454399a396ddf5df995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprinkler: {fileID: 0}
-  lamp: {fileID: 0}
-  cover: {fileID: 0}
-  artificialsun: {fileID: 0}
+  sprinkler: {fileID: 8475964021775105467, guid: 13d67b24e0c54de4d982d72e5658e51b,
+    type: 3}
+  lamp: {fileID: 8047014395405643660, guid: 1811e81a397168b4d9fb881c90eee4e8, type: 3}
+  cover: {fileID: 4986191751875318869, guid: e2cbdd9491184ad4d8b3ab4799749aa6, type: 3}
+  artificialsun: {fileID: 9047400333884807714, guid: 2791f0e7cd1e1bf42b349cf727c1dbdf,
+    type: 3}
   plant: {fileID: 0}

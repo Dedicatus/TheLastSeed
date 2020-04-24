@@ -21,6 +21,7 @@ public class WeatherController : MonoBehaviour
     private GameController myGameController;
     private ItemController myItemController;
     [SerializeField] private Plant plant;
+    [SerializeField] private GameObject cover;
 
     // Start is called before the first frame update
     void Start()
@@ -85,8 +86,9 @@ public class WeatherController : MonoBehaviour
     void fooAcidRain()
     {
         plant.addHealth(-10);
-       
-        myItemController.cover.SetActive(false);
+
+        // myItemController.cover.SetActive(false);
+       cover.SetActive(false);
 
 
     }

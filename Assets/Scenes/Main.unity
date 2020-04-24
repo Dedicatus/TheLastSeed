@@ -145,18 +145,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7591043602138348723}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &346883397 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 8760379079187329407}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5283ba1aa51098a4497b324a6a59fedb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &369296488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7591043602440403163, guid: 31ea8c37761cf6c4cadfb577fe73756a,
@@ -638,6 +626,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503694483}
+    - target: {fileID: 3923761250718428079, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3923761250835254903, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -648,10 +641,15 @@ PrefabInstance:
       propertyPath: plantInfoMenu
       value: 
       objectReference: {fileID: 1763804221}
+    - target: {fileID: 3923761250835254906, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3923761251083241964, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 3923761251083241964, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
@@ -676,7 +674,7 @@ PrefabInstance:
     - target: {fileID: 3923761251083241964, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -200
+      value: 624
       objectReference: {fileID: 0}
     - target: {fileID: 3923761251083241965, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
@@ -693,11 +691,21 @@ PrefabInstance:
       propertyPath: plantInfoMenu
       value: 
       objectReference: {fileID: 1763804221}
+    - target: {fileID: 3923761252301720900, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3923761252435591452, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503694483}
+    - target: {fileID: 3923761252435591455, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4327240854209455903, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -789,21 +797,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
         type: 3}
-      propertyPath: GC
-      value: 
-      objectReference: {fileID: 346883397}
-    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
-        type: 3}
-      propertyPath: IM
-      value: 
-      objectReference: {fileID: 503694483}
-    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
-        type: 3}
-      propertyPath: plant
-      value: 
-      objectReference: {fileID: 2055600804}
-    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
-        type: 3}
       propertyPath: weatherMassage
       value: 
       objectReference: {fileID: 2013288196}
@@ -812,6 +805,16 @@ PrefabInstance:
       propertyPath: comingWeatherMessage
       value: 
       objectReference: {fileID: 784967007}
+    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
+        type: 3}
+      propertyPath: plant
+      value: 
+      objectReference: {fileID: 2055600804}
+    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
+        type: 3}
+      propertyPath: cover
+      value: 
+      objectReference: {fileID: 637971677}
     - target: {fileID: 9031841064259888011, guid: 5ba32875e67da6943bfc20641359a3d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -990,7 +993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 246055980, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 303426057, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
       propertyPath: button
@@ -1015,12 +1018,12 @@ PrefabInstance:
     - target: {fileID: 7996602039790900528, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.85
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 7996602039790900528, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 8075241354339105936, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
@@ -1138,7 +1141,8 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1365716096}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4110182820135860964, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
 --- !u!1001 &8583000604924635097
 PrefabInstance:
@@ -1415,5 +1419,10 @@ PrefabInstance:
       propertyPath: artificialsun
       value: 
       objectReference: {fileID: 165855657}
+    - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
+        type: 3}
+      propertyPath: plant
+      value: 
+      objectReference: {fileID: 2055600804}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0120a4e2234db814da47c029d61bf62c, type: 3}

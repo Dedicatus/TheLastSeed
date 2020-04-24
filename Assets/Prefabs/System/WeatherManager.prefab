@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastTime: 0
   normalTime: 0
-  nowWeather: 0
+  curWeather: 0
+  comingWeather: 0
   inAccident: 0
-  GC: {fileID: 0}
-  IM: {fileID: 0}
+  weatherMassage: {fileID: 0}
+  comingWeatherMessage: {fileID: 0}
+  plant: {fileID: 0}
+  cover: {fileID: 0}
