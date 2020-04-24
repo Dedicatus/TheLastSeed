@@ -93,11 +93,13 @@ public class GameController : MonoBehaviour
         switch (scene)
         {
             case GameScene.SpaceShip:
+                myUIController.btnSpaceShip.gameObject.SetActive(false);
                 myOxygenController.oxygenConsuming = false;
                 spaceShip.SetActive(true);
                 plantLand.SetActive(false);
                 break;
             case GameScene.PlantLand:
+                myUIController.btnSpaceShip.gameObject.SetActive(true);
                 myOxygenController.oxygenConsuming = true;
                 spaceShip.SetActive(false);
                 plantLand.SetActive(true);
