@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private OxygenController myOxygenController;
     [SerializeField] private UIController myUIController;
     [SerializeField] private Plant myPlant;
+    [SerializeField] private WeatheManager WM;
+
 
     [Header("Scene")]
     [SerializeField] private GameObject spaceShip;
@@ -56,12 +58,15 @@ public class GameController : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= secPerQuarter)
             {
+
                 timer -= secPerQuarter;
                 curMin += 15;
                 if (curMin == 60)
                 {
+                    WM.isChanged = false;
                     curMin = 0;
                     curHour += 1;
+
                     if (curHour == dayEndHour)
                     {
                         changeScene(GameScene.SpaceShip);

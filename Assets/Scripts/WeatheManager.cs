@@ -1,91 +1,123 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeatheManager : MonoBehaviour
 {
     public enum weatherList { AcidRain, SandStorm, HighTemp, Cold, Normal }
+
     //DEFINE VARIABLES
     [SerializeField] float lastTime;
     private float lastTimer;
     [SerializeField] float normalTime;
     private float normalTimer;
-    public weatherList nowWeather;
+    public weatherList curWeather;
     [SerializeField] bool inAccident;
+    [SerializeField] Text weatherMassage;
+
+    [Header("Controllers")]
+    [SerializeField] private GameController GC;
+    [SerializeField] private ItemsManager IM;
+    [SerializeField] private Plant plant;
+
+    public bool isChanged;
     // Start is called before the first frame update
     void Start()
     {
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    nowWeather = (weatherList)Random.Range(0, 4);   
-        //    Debug.Log(nowWeather.ToString());
-        //}
-
-
+        isChanged = false;
+        weatherMassage.text = "";
+    // IN CASE TO ADD MORE FEATURES 
         inAccident = false;
         lastTime = 15f;
         lastTimer = 0f;
         normalTime = 40f;
         normalTimer = 0f;
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!inAccident)
+
+        if (GC.getCurHour() == 7 || GC.getCurHour() == 15)
         {
-            normalTimer += Time.deltaTime;
-            if (normalTime <= normalTimer) {
+            if (isChanged == false)
+            {
                 ChangeWeather();
-                normalTimer = 0;
+                isChanged = true;
             }
         }
-        else 
-        {
 
-
-            lastTimer += Time.deltaTime;
-            if (lastTime <= lastTimer) {
-                BackNormal();
-                lastTimer = 0;
-            }
-        }
+      
+        
     }
 
  
 
-
+    //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
     void ChangeWeather() {
-        nowWeather = (weatherList)Random.Range(0, 5);
-        Debug.Log(nowWeather.ToString());
-        switch (nowWeather)
+
+        curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+        Debug.Log(curWeather);
+        weatherMassage.text = $"Current weather is {curWeather.ToString()}";
+
+        //Debug.Log(curWeather.ToString());
+        switch (curWeather)
         {
-        
+            case weatherList.AcidRain:
+                fooAcidRain();
+                break;
+            case weatherList.Cold:
+                fooCold();
+                break;
+            case weatherList.HighTemp:
+                fooHighTemp();
+                break;
+            case weatherList.Normal:
+                BackNormal();
+                break;
+            case weatherList.SandStorm:
+                fooSandStorm();
+                break;
         }
     }
 
     // FUNCTIONS HANDLING DIFFERENT WEATHER CHANGE
-    void BackNormal() { 
-    
+    void BackNormal() {
+        return;
     }
 
-    void fooAcidRain() { 
-    
-    
+    void fooAcidRain() {
+        plant.addHealth(-10);
+        IM.purifier.SetActive(false);
+        IM.cover.SetActive(false);
+
+
     }
 
-    void fooSandStorm() { 
-    
+    void fooSandStorm() {
+        plant.addHealth(-10);
+
+        IM.pipe.SetActive(false);
+
     }
 
-    void fooHighTemp() { 
-    
+    void fooHighTemp() {
+        plant.addHealth(-10);
+
+        IM.sprinkler.SetActive(false);
+
     }
 
-    void fooCold() { 
-    
+    void fooCold() {
+        plant.addHealth(-10);
+
+        IM.artificialsun.SetActive(false);
+    }
+
+    public weatherList GetCurWeather() {
+        return curWeather;
     }
 }
 
