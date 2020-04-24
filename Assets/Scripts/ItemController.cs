@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemsManager : MonoBehaviour
+public class ItemController : MonoBehaviour
 {
     public enum items {Sprinkler, Purifier, Pipe, Cover, Artificialsun}
     [Header("GameObjects")]
@@ -33,7 +33,7 @@ public class ItemsManager : MonoBehaviour
             RaycastHit mHit;
             if (Physics.Raycast(mRay, out mHit))
             {
-                Debug.Log("1232132");
+                //Debug.Log("1232132");
 
                 switch (mHit.collider.gameObject.name)
                 {

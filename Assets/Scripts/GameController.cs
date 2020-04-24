@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private OxygenController myOxygenController;
     [SerializeField] private UIController myUIController;
     [SerializeField] private Plant myPlant;
-    [SerializeField] private WeatheManager WM;
+    [SerializeField] private WeatherController myWeatherController;
 
 
     [Header("Scene")]
@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
         changeScene(GameScene.SpaceShip);
         timer = 0;
         curHour = dayStartHour;
+        myWeatherController.changeWeather();
         curMin = 0;
         curDay = 1;
         timePassing = true;
@@ -63,7 +64,6 @@ public class GameController : MonoBehaviour
                 curMin += 15;
                 if (curMin == 60)
                 {
-                    WM.isChanged = false;
                     curMin = 0;
                     curHour += 1;
 
@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
                         changeScene(GameScene.SpaceShip);
                         dayPass();
                     }
+                    else if (curHour == (dayStartHour + dayEndHour) / 2) { myWeatherController.changeWeather(); }
                 }
                 myUIController.updateTimeText();
             }
@@ -93,13 +94,11 @@ public class GameController : MonoBehaviour
         switch (scene)
         {
             case GameScene.SpaceShip:
-                myUIController.btnSpaceShip.gameObject.SetActive(false);
                 myOxygenController.oxygenConsuming = false;
                 spaceShip.SetActive(true);
                 plantLand.SetActive(false);
                 break;
             case GameScene.PlantLand:
-                myUIController.btnSpaceShip.gameObject.SetActive(true);
                 myOxygenController.oxygenConsuming = true;
                 spaceShip.SetActive(false);
                 plantLand.SetActive(true);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeatheManager : MonoBehaviour
+public class WeatherController : MonoBehaviour
 {
     public enum weatherList { AcidRain, SandStorm, HighTemp, Cold, Normal }
 
@@ -18,17 +18,16 @@ public class WeatheManager : MonoBehaviour
     [SerializeField] Text weatherMassage;
     [SerializeField] Text comingWeatherMessage;
 
-    [Header("Controllers")]
-    [SerializeField] private GameController GC;
-    [SerializeField] private ItemsManager IM;
+    private GameController myGameController;
+    private ItemController myItemController;
     [SerializeField] private Plant plant;
 
-    public bool isChanged;
     // Start is called before the first frame update
     void Start()
     {
+        myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
         comingWeather = weatherList.Normal;
-        isChanged = false;
         weatherMassage.text = "";
     // IN CASE TO ADD MORE FEATURES 
         inAccident = false;
@@ -42,27 +41,17 @@ public class WeatheManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (GC.getCurHour() == 7 || GC.getCurHour() == 15)
-        {
-            if (isChanged == false)
-            {
-                ChangeWeather();
-                isChanged = true;
-            }
-        }
-
-      
         
     }
 
  
 
     //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
-    void ChangeWeather() {
+    public void changeWeather()
+    {
         curWeather = comingWeather;
         comingWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
-        Debug.Log(curWeather);
+        //Debug.Log(curWeather);
         weatherMassage.text = curWeather.ToString();
         comingWeatherMessage.text = comingWeather.ToString();
 
@@ -79,7 +68,7 @@ public class WeatheManager : MonoBehaviour
                 fooHighTemp();
                 break;
             case weatherList.Normal:
-                BackNormal();
+                backNormal();
                 break;
             case weatherList.SandStorm:
                 fooSandStorm();
@@ -88,39 +77,45 @@ public class WeatheManager : MonoBehaviour
     }
 
     // FUNCTIONS HANDLING DIFFERENT WEATHER CHANGE
-    void BackNormal() {
+    void backNormal()
+    {
         return;
     }
 
-    void fooAcidRain() {
+    void fooAcidRain()
+    {
         plant.addHealth(-10);
        
-        IM.cover.SetActive(false);
+        myItemController.cover.SetActive(false);
 
 
     }
 
-    void fooSandStorm() {
+    void fooSandStorm()
+    {
         plant.addHealth(-10);
 
-        IM.lamp.SetActive(false);
+        myItemController.lamp.SetActive(false);
 
     }
 
-    void fooHighTemp() {
+    void fooHighTemp()
+    {
         plant.addHealth(-10);
 
-        IM.sprinkler.SetActive(false);
+        myItemController.sprinkler.SetActive(false);
 
     }
 
-    void fooCold() {
+    void fooCold()
+    {
         plant.addHealth(-10);
 
-        IM.artificialsun.SetActive(false);
+        myItemController.artificialsun.SetActive(false);
     }
 
-    public weatherList GetCurWeather() {
+    public weatherList GetCurWeather()
+    {
         return curWeather;
     }
 }
