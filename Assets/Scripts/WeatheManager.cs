@@ -13,8 +13,10 @@ public class WeatheManager : MonoBehaviour
     [SerializeField] float normalTime;
     private float normalTimer;
     public weatherList curWeather;
+    public weatherList comingWeather;
     [SerializeField] bool inAccident;
     [SerializeField] Text weatherMassage;
+    [SerializeField] Text comingWeatherMessage;
 
     [Header("Controllers")]
     [SerializeField] private GameController GC;
@@ -25,6 +27,7 @@ public class WeatheManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        comingWeather = weatherList.Normal;
         isChanged = false;
         weatherMassage.text = "";
     // IN CASE TO ADD MORE FEATURES 
@@ -57,10 +60,11 @@ public class WeatheManager : MonoBehaviour
 
     //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
     void ChangeWeather() {
-
-        curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+        curWeather = comingWeather;
+        comingWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
         Debug.Log(curWeather);
-        weatherMassage.text = $"Current weather is {curWeather.ToString()}";
+        weatherMassage.text = curWeather.ToString();
+        comingWeatherMessage.text = comingWeather.ToString();
 
         //Debug.Log(curWeather.ToString());
         switch (curWeather)
@@ -90,7 +94,7 @@ public class WeatheManager : MonoBehaviour
 
     void fooAcidRain() {
         plant.addHealth(-10);
-        IM.purifier.SetActive(false);
+       
         IM.cover.SetActive(false);
 
 
@@ -99,7 +103,7 @@ public class WeatheManager : MonoBehaviour
     void fooSandStorm() {
         plant.addHealth(-10);
 
-        IM.pipe.SetActive(false);
+        IM.lamp.SetActive(false);
 
     }
 

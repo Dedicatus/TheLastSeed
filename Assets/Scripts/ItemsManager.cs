@@ -8,12 +8,10 @@ public class ItemsManager : MonoBehaviour
     public enum items {Sprinkler, Purifier, Pipe, Cover, Artificialsun}
     [Header("GameObjects")]
     public GameObject sprinkler;
-    public GameObject purifier;
-    public GameObject pipe;
+    public GameObject lamp;
     public GameObject cover;
     public GameObject artificialsun;
-    public GameObject[] Supplys;
-    public Image[] itemImages;
+    
     [Header("Controller")]
     [SerializeField] private Plant plant;
 
@@ -60,23 +58,18 @@ public class ItemsManager : MonoBehaviour
         }
     }
 
-    public void fooSprinkler() { 
-    
+    public void fooSprinkler() {
+        sprinkler.SetActive(true);
     }
 
-    public void fooPurifier()
+    public void fooSun()
     {
-
+        artificialsun.SetActive(true);
     }
 
     public void fooCover()
     {
-
-    }
-
-    public void fooPipe()
-    {
-
+        cover.SetActive(true);
     }
 
     public void fooLight()
