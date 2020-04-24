@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private UnityEngine.UI.Text dayText;
     [SerializeField] private UnityEngine.UI.Text timeText;
+    public UnityEngine.UI.Button btnSpaceShip;
     // Start is called before the first frame update
     void Start()
     {
