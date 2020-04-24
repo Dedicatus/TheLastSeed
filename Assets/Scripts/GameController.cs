@@ -87,6 +87,7 @@ public class GameController : MonoBehaviour
         myUIController.updateDayText();
         myOxygenController.addOxygen(dailyOxygenSupply);
         myPlant.dayPassed();
+        myWeatherController.changeWeather();
     }
 
     public void changeScene(GameScene scene)
