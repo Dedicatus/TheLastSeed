@@ -581,10 +581,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1882981172, guid: 43410e5545571084e87699dab2493aba, type: 3}
-      propertyPath: m_DirectAudioVolumes.Array.data[0]
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1650829906225925063, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: myOxygenController

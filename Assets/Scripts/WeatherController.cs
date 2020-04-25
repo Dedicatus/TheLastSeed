@@ -23,19 +23,26 @@ public class WeatherController : MonoBehaviour
     [SerializeField] private Plant plant;
     [SerializeField] private GameObject cover;
 
-    [Header("Values")]
-    [SerializeField] int AcidDamLv1 = 10;
-    [SerializeField] int AcidDamLv2 = 20;
-    [SerializeField] int AcidDamLv3 = 30;
-    [SerializeField] int SandDamLv1 = 10;
-    [SerializeField] int SandDamLv2 = 10;
-    [SerializeField] int SandDamLv3 = 10;
-    [SerializeField] int HotDamLv1 = 10;
-    [SerializeField] int HotDamLv2 = 20;
-    [SerializeField] int HotDamLv3 = 30;
-    [SerializeField] int ColdDamLv1 = 10;
-    [SerializeField] int ColdDamLv2 = 20;
-    [SerializeField] int ColdDamLv3 = 30;
+    [Header("AcidDamageValue")]
+    [SerializeField] float AcidDamLv1 = 1f;
+    [SerializeField] float AcidDamLv2 = 2f;
+    [SerializeField] float AcidDamLv3 = 3f;
+
+    [Header("SandDamageValue")]
+    [SerializeField] float SandDamLv1 = 1f;
+    [SerializeField] float SandDamLv2 = 2f;
+    [SerializeField] float SandDamLv3 = 3f;
+
+    [Header("HotDamageValue")]
+    [SerializeField] float HotDamLv1 = 1f;
+    [SerializeField] float HotDamLv2 = 2f;
+    [SerializeField] float HotDamLv3 = 3f;
+
+    [Header("ColdDamageValue")]
+    [SerializeField] float ColdDamLv1 = 1f;
+    [SerializeField] float ColdDamLv2 = 2f;
+    [SerializeField] float ColdDamLv3 = 3f;
+
     [SerializeField] int curLevel;
   
 
@@ -114,6 +121,8 @@ public class WeatherController : MonoBehaviour
         //        fooSandStorm();
         //        break;
         //}
+
+        plant.applyWeatherCondition();
     }
 
     // FUNCTIONS HANDLING DIFFERENT WEATHER CHANGE
@@ -124,7 +133,7 @@ public class WeatherController : MonoBehaviour
 
     void fooAcidRain()
     {
-        plant.addHealth(-10);
+        //plant.addHealth(-10);
 
         // myItemController.cover.SetActive(false);
        cover.SetActive(false);
@@ -134,7 +143,7 @@ public class WeatherController : MonoBehaviour
 
     void fooSandStorm()
     {
-        plant.addHealth(-10);
+        //plant.addHealth(-10);
 
         myItemController.lamp.SetActive(false);
 
@@ -142,7 +151,7 @@ public class WeatherController : MonoBehaviour
 
     void fooHighTemp()
     {
-        plant.addHealth(-10);
+        //plant.addHealth(-10);
 
         myItemController.sprinkler.SetActive(false);
 
@@ -150,7 +159,7 @@ public class WeatherController : MonoBehaviour
 
     void fooCold()
     {
-        plant.addHealth(-10);
+        //plant.addHealth(-10);
 
         myItemController.artificialsun.SetActive(false);
     }
@@ -160,8 +169,13 @@ public class WeatherController : MonoBehaviour
         return curWeather;
     }
 
-    public int GetCurDamage() {
-        int curDamage = 0;
+    public int getWeatherLevel()
+    {
+        return curLevel;
+    }
+
+    public float getCurDamage() {
+        float curDamage = 0;
         switch (curWeather) {
             case weatherList.AcidRain:
                 switch (curLevel) {
