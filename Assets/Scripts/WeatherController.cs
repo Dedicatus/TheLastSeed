@@ -23,6 +23,24 @@ public class WeatherController : MonoBehaviour
     [SerializeField] private Plant plant;
     [SerializeField] private GameObject cover;
 
+    [Header("Values")]
+    [SerializeField] int AcidDamLv1 = 10;
+    [SerializeField] int AcidDamLv2 = 20;
+    [SerializeField] int AcidDamLv3 = 30;
+    [SerializeField] int SandDamLv1 = 10;
+    [SerializeField] int SandDamLv2 = 10;
+    [SerializeField] int SandDamLv3 = 10;
+    [SerializeField] int HotDamLv1 = 10;
+    [SerializeField] int HotDamLv2 = 20;
+    [SerializeField] int HotDamLv3 = 30;
+    [SerializeField] int ColdDamLv1 = 10;
+    [SerializeField] int ColdDamLv2 = 20;
+    [SerializeField] int ColdDamLv3 = 30;
+    [SerializeField] int curLevel;
+  
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,31 +68,52 @@ public class WeatherController : MonoBehaviour
     //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
     public void changeWeather()
     {
-        curWeather = comingWeather;
-        comingWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
-        //Debug.Log(curWeather);
+        //curWeather = comingWeather;
+        //comingWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+        
+       
+
+        curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+        float rateOfLevel = (float)Random.Range(0f, 1f);
+
+        //GET A RANDOM LEVEL
+            if (0f <= rateOfLevel && rateOfLevel < 0.33f) {
+                curLevel = 1;
+            }
+
+            if (0.33f <= rateOfLevel && rateOfLevel < 0.66f)
+            {
+                curLevel = 2;
+            }
+
+            if (0.66f <= rateOfLevel && rateOfLevel < 1f)
+            {
+                curLevel = 3;
+            }
+        
+
         weatherMassage.text = curWeather.ToString();
         comingWeatherMessage.text = comingWeather.ToString();
 
         //Debug.Log(curWeather.ToString());
-        switch (curWeather)
-        {
-            case weatherList.AcidRain:
-                fooAcidRain();
-                break;
-            case weatherList.Cold:
-                fooCold();
-                break;
-            case weatherList.HighTemp:
-                fooHighTemp();
-                break;
-            case weatherList.Normal:
-                backNormal();
-                break;
-            case weatherList.SandStorm:
-                fooSandStorm();
-                break;
-        }
+        //switch (curWeather)
+        //{
+        //    case weatherList.AcidRain:
+        //        fooAcidRain();
+        //        break;
+        //    case weatherList.Cold:
+        //        fooCold();
+        //        break;
+        //    case weatherList.HighTemp:
+        //        fooHighTemp();
+        //        break;
+        //    case weatherList.Normal:
+        //        backNormal();
+        //        break;
+        //    case weatherList.SandStorm:
+        //        fooSandStorm();
+        //        break;
+        //}
     }
 
     // FUNCTIONS HANDLING DIFFERENT WEATHER CHANGE
@@ -119,6 +158,69 @@ public class WeatherController : MonoBehaviour
     public weatherList GetCurWeather()
     {
         return curWeather;
+    }
+
+    public int GetCurDamage() {
+        int curDamage = 0;
+        switch (curWeather) {
+            case weatherList.AcidRain:
+                switch (curLevel) {
+                    case 1:
+                        curDamage = AcidDamLv1;
+                        break;
+                    case 2:
+                        curDamage = AcidDamLv2;
+                        break;
+                    case 3:
+                        curDamage = AcidDamLv3;
+                        break;
+                }
+                break;
+            case weatherList.SandStorm:
+                switch (curLevel)
+                {
+                    case 1:
+                        curDamage = SandDamLv1;
+                        break;
+                    case 2:
+                        curDamage = SandDamLv2;
+                        break;
+                    case 3:
+                        curDamage = SandDamLv3;
+                        break;
+                }
+                break;
+            case weatherList.HighTemp:
+                switch (curLevel)
+                {
+                    case 1:
+                        curDamage = HotDamLv1;
+                        break;
+                    case 2:
+                        curDamage = HotDamLv2;
+                        break;
+                    case 3:
+                        curDamage = HotDamLv3;
+                        break;
+                }
+                break;
+            case weatherList.Cold:
+                switch (curLevel)
+                {
+                    case 1:
+                        curDamage = ColdDamLv1;
+                        break;
+                    case 2:
+                        curDamage = ColdDamLv2;
+                        break;
+                    case 3:
+                        curDamage = ColdDamLv3;
+                        break;
+                }
+                break;
+
+        }
+        return curDamage;
     }
 }
 
