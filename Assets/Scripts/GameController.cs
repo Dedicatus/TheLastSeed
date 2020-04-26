@@ -77,7 +77,6 @@ public class GameController : MonoBehaviour
             }
         }
     }
-
     private void dayPass()
     {
         curHour = dayStartHour;

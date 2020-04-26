@@ -154,4 +154,12 @@ public class Plant : MonoBehaviour
     {
         return healthToStages[curStage];
     }
+
+    public void UseCurItems(ItemController.items curItem) {
+        if (myWeatherController.curWeather == myWeatherController.weatherPairs[curItem])
+        {
+            myStatus = PlantStatus.Normal;
+        }
+    }
+   
 }

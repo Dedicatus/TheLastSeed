@@ -44,18 +44,32 @@ public class WeatherController : MonoBehaviour
     [SerializeField] float ColdDamLv3 = 3f;
 
     [SerializeField] int curLevel;
-  
 
+
+     public Dictionary <ItemController.items, weatherList> weatherPairs;
+
+    public bool usedItemLatsPhase;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        usedItemLatsPhase = false;
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
         comingWeather = weatherList.Normal;
         weatherMassage.text = "";
-    // IN CASE TO ADD MORE FEATURES 
+
+        //Initiate weatherpairs
+        weatherPairs = new Dictionary<ItemController.items, weatherList>();
+        weatherPairs.Add( ItemController.items.Cover,weatherList.AcidRain);
+        weatherPairs.Add( ItemController.items.Artificialsun, weatherList.Cold);
+        weatherPairs.Add( ItemController.items.Sprinkler, weatherList.HighTemp);
+        weatherPairs.Add(ItemController.items.Lamp, weatherList.SandStorm);
+
+
+
+        // IN CASE TO ADD MORE FEATURES 
         inAccident = false;
         lastTime = 15f;
         lastTimer = 0f;
@@ -75,14 +89,33 @@ public class WeatherController : MonoBehaviour
     //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
     public void changeWeather()
     {
-        //curWeather = comingWeather;
-        //comingWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
-        
-       
+        weatherList lastweather = curWeather;
+        if (usedItemLatsPhase)
+        {
+            if (weatherPairs[myItemController.lastUsedItem] == curWeather)
+            {
+                do
+                {
+                    curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
 
-        curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+                } while (curWeather != lastweather);
+            }
+
+            else
+            {
+                curWeather = weatherPairs[myItemController.lastUsedItem];
+            }
+        }
+        else { 
+                    curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+
+        }
+
+        usedItemLatsPhase = false;
+
+        //curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
         float rateOfLevel = (float)Random.Range(0f, 1f);
-
+        
         //GET A RANDOM LEVEL
             if (0f <= rateOfLevel && rateOfLevel < 0.33f) {
                 curLevel = 1;

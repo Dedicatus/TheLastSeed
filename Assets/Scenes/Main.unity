@@ -586,6 +586,11 @@ PrefabInstance:
       propertyPath: myOxygenController
       value: 
       objectReference: {fileID: 1907761806}
+    - target: {fileID: 1854819783690038635, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 503694483}
     - target: {fileID: 3923761250718428077, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -942,6 +947,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1218497701}
     m_Modifications:
+    - target: {fileID: 246055980, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 303426057, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
       propertyPath: button
       value: 
@@ -981,6 +990,41 @@ PrefabInstance:
     - target: {fileID: 2025831707, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
       propertyPath: m_Offset.x
       value: 0.05613184
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966724597302512768, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.14379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966724597302512768, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.3769846
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966724597302512768, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5367329
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966724597302512768, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.397011
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395593058702445757, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996602039790900528, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996602039790900528, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 8075241353924403379, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}

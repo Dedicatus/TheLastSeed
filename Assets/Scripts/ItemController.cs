@@ -5,21 +5,30 @@ using UnityEngine.UI;
 
 public class ItemController : MonoBehaviour
 {
-    public enum items {Sprinkler, Purifier, Pipe, Cover, Artificialsun}
+    public enum items {Sprinkler, Lamp, Cover, Artificialsun}
     [Header("GameObjects")]
     public GameObject sprinkler;
     public GameObject lamp;
     public GameObject cover;
     public GameObject artificialsun;
+    [SerializeField] Image curItemUI;
     
     [Header("Controller")]
     [SerializeField] private Plant plant;
+    [SerializeField] private WeatherController myWeatherController;
+    
 
+    public items lastUsedItem;
+    public items curItem;
+
+    private bool slotIsEmpty;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        slotIsEmpty = true;
+        myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
+
     }
 
     // Update is called once per frame
@@ -58,24 +67,37 @@ public class ItemController : MonoBehaviour
         }
     }
 
-    public void fooSprinkler() {
-        sprinkler.SetActive(true);
+    public void ClickCurItem( ) {
+        if (!slotIsEmpty)
+        {
+            plant.UseCurItems(curItem);
+            curItemUI.sprite = null;
+            slotIsEmpty = true;
+            lastUsedItem = curItem;
+            myWeatherController.usedItemLatsPhase = true;
+          
+        }
+       
     }
 
-    public void fooSun()
-    {
-        artificialsun.SetActive(true);
-    }
+    //public void fooSprinkler() {
+    //    sprinkler.SetActive(true);
+    //}
 
-    public void fooCover()
-    {
-        cover.SetActive(true);
-    }
+    //public void fooSun()
+    //{
+    //    artificialsun.SetActive(true);
+    //}
 
-    public void fooLight()
-    {
+    //public void fooCover()
+    //{
+    //    cover.SetActive(true);
+    //}
 
-    }
+    //public void fooLight()
+    //{
+
+    //}
 
 
 }
