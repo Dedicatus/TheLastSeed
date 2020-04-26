@@ -56,4 +56,9 @@ public class OxygenController : MonoBehaviour
     {
         return curOxygen;
     }
+
+    public float getMaxOxygen()
+    {
+        return maxOxygen;
+    }
 }

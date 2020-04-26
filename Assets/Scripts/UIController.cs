@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private UnityEngine.UI.Text dayText;
     [SerializeField] private UnityEngine.UI.Text timeText;
+    [SerializeField] private GameObject plantInfoMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,14 @@ public class UIController : MonoBehaviour
     public void updateTimeText()
     {
         timeText.text = myGameController.getCurHour().ToString() + ":" + myGameController.getCurMin().ToString("00");
+    }
+
+    public void updateUI(int targetScene){
+        if(targetScene == (int) GameController.GameScene.PlantLand){
+            plantInfoMenu.SetActive(true);
+        } else {
+            plantInfoMenu.SetActive(false);
+        }
     }
 
 }

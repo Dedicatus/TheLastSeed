@@ -350,6 +350,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1381088066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8680971751596791198, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763804221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2318595597340294038, guid: 43410e5545571084e87699dab2493aba,
@@ -443,6 +449,10 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 1263265942}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: plantInfoMenu
+      value: 
+      objectReference: {fileID: 1763804221}
     - target: {fileID: 155309207058801358, guid: c201464c1f2b8f54ca4af582d2898556,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -581,6 +591,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 616931483552900107, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1650829906225925063, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: myOxygenController
@@ -591,6 +606,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503694483}
+    - target: {fileID: 3258991690354803911, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: oxygenController
+      value: 
+      objectReference: {fileID: 1907761806}
+    - target: {fileID: 3258991690354803911, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: topColor
+      value: 
+      objectReference: {fileID: 1381088066}
     - target: {fileID: 3923761250718428077, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -669,6 +694,11 @@ PrefabInstance:
     - target: {fileID: 5119766793429709524, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960283048133542003, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
