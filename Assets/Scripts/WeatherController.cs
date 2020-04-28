@@ -131,7 +131,7 @@ public class WeatherController : MonoBehaviour
                 curLevel = 3;
             }
         
-
+        
         weatherMassage.text = curWeather.ToString();
         comingWeatherMessage.text = comingWeather.ToString();
 
