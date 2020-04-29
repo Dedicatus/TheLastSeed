@@ -46,9 +46,10 @@ MonoBehaviour:
   myOxygenController: {fileID: 0}
   myUIController: {fileID: 0}
   myPlant: {fileID: 0}
+  myWeatherController: {fileID: 0}
   spaceShip: {fileID: 0}
   plantLand: {fileID: 0}
-  secPerQuarter: 15
+  secPerQuarter: 3
   dayStartHour: 7
   dayEndHour: 23
   curDay: 1

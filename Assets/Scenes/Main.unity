@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &15846921 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3923761252435591452, guid: 43410e5545571084e87699dab2493aba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5119766793190549720}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &165855657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7591043602241289498, guid: 31ea8c37761cf6c4cadfb577fe73756a,
@@ -157,18 +145,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7591043602138348723}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &502693425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3923761250718428077, guid: 43410e5545571084e87699dab2493aba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5119766793190549720}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &503694482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8818108282427236514, guid: 0120a4e2234db814da47c029d61bf62c,
@@ -356,18 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1335667607 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3923761250835254903, guid: 43410e5545571084e87699dab2493aba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5119766793190549720}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1337065339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 155309207058801358, guid: c201464c1f2b8f54ca4af582d2898556,
@@ -384,18 +348,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40be9e48eea0d264ca7c84c2c4b4146f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1365716096 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3923761252301720897, guid: 43410e5545571084e87699dab2493aba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5119766793190549720}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1431392964 stripped
@@ -420,6 +372,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1583298999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 513749030470989144, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1763804221 stripped
@@ -1060,11 +1024,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantLand
       objectReference: {fileID: 0}
-    - target: {fileID: 7591043600786894693, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ea8c37761cf6c4cadfb577fe73756a, type: 3}
 --- !u!1001 &8075241355137965482
@@ -1074,18 +1033,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1218497701}
     m_Modifications:
-    - target: {fileID: 303426057, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
-      propertyPath: button
+    - target: {fileID: 1882499935864691965, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myItemController
       value: 
-      objectReference: {fileID: 15846921}
-    - target: {fileID: 717354945, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
-      propertyPath: button
+      objectReference: {fileID: 503694483}
+    - target: {fileID: 2968383059834073338, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myItemController
       value: 
-      objectReference: {fileID: 502693425}
-    - target: {fileID: 792329220, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
-      propertyPath: button
+      objectReference: {fileID: 503694483}
+    - target: {fileID: 4919982355735895046, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myItemController
       value: 
-      objectReference: {fileID: 1335667607}
+      objectReference: {fileID: 503694483}
+    - target: {fileID: 5538303983678704487, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myItemController
+      value: 
+      objectReference: {fileID: 503694483}
     - target: {fileID: 8075241354612427732, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: m_Name
@@ -1146,11 +1113,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8075241355546927780, guid: 1009ae9fc36f14743a7486edefebb5b4,
-        type: 3}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 1365716096}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1009ae9fc36f14743a7486edefebb5b4, type: 3}
 --- !u!1001 &8583000604924635097
@@ -1246,6 +1208,11 @@ PrefabInstance:
       objectReference: {fileID: 2055600804}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
+      propertyPath: myWeatherController
+      value: 
+      objectReference: {fileID: 2098837381}
+    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
+        type: 3}
       propertyPath: spaceShip
       value: 
       objectReference: {fileID: 566040190}
@@ -1254,31 +1221,6 @@ PrefabInstance:
       propertyPath: plantLand
       value: 
       objectReference: {fileID: 1888654294}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: secPerQuarter
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: WM
-      value: 
-      objectReference: {fileID: 2098837381}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: timePassing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: myWeatherManager
-      value: 
-      objectReference: {fileID: 2098837381}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: myWeatherController
-      value: 
-      objectReference: {fileID: 2098837381}
     - target: {fileID: 8760379080133693073, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1430,8 +1372,18 @@ PrefabInstance:
       objectReference: {fileID: 165855657}
     - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
         type: 3}
+      propertyPath: curItemUI
+      value: 
+      objectReference: {fileID: 1583298999}
+    - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
+        type: 3}
       propertyPath: plant
       value: 
       objectReference: {fileID: 2055600804}
+    - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
+        type: 3}
+      propertyPath: myWeatherController
+      value: 
+      objectReference: {fileID: 2098837381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0120a4e2234db814da47c029d61bf62c, type: 3}

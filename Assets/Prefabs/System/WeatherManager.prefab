@@ -52,3 +52,17 @@ MonoBehaviour:
   comingWeatherMessage: {fileID: 0}
   plant: {fileID: 0}
   cover: {fileID: 0}
+  AcidDamLv1: 1
+  AcidDamLv2: 2
+  AcidDamLv3: 3
+  SandDamLv1: 1
+  SandDamLv2: 2
+  SandDamLv3: 3
+  HotDamLv1: 1
+  HotDamLv2: 2
+  HotDamLv3: 3
+  ColdDamLv1: 1
+  ColdDamLv2: 2
+  ColdDamLv3: 3
+  curLevel: 0
+  usedItemLatsPhase: 0

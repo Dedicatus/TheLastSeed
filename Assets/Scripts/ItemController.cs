@@ -11,21 +11,34 @@ public class ItemController : MonoBehaviour
     public GameObject lamp;
     public GameObject cover;
     public GameObject artificialsun;
-    [SerializeField] Image curItemUI;
+    [SerializeField] public Image curItemUI;
     
     [Header("Controller")]
     [SerializeField] private Plant plant;
     [SerializeField] private WeatherController myWeatherController;
+    [SerializeField] private GameController myGameController;
     
 
     public items lastUsedItem;
     public items curItem;
 
-    private bool slotIsEmpty;
+    public bool slotIsEmpty;
+
+    public Dictionary<string, ItemController.items> itemPairs;
+
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        itemPairs = new Dictionary<string, ItemController.items>();
+        myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+
+        itemPairs.Add("Cooling", items.Sprinkler);
+        itemPairs.Add("Lamp", items.Lamp);
+        itemPairs.Add("Warming", items.Artificialsun);
+        itemPairs.Add("Cover", items.Cover);
+
         slotIsEmpty = true;
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
 
@@ -68,36 +81,25 @@ public class ItemController : MonoBehaviour
     }
 
     public void ClickCurItem( ) {
-        if (!slotIsEmpty)
+        if (myGameController.getCurScene() == GameController.GameScene.PlantLand)
         {
-            plant.UseCurItems(curItem);
-            curItemUI.sprite = null;
-            slotIsEmpty = true;
-            lastUsedItem = curItem;
-            myWeatherController.usedItemLatsPhase = true;
-          
+            if (!slotIsEmpty)
+            {
+                plant.UseCurItems(curItem);
+                curItemUI.sprite = null;
+                slotIsEmpty = true;
+                lastUsedItem = curItem;
+                myWeatherController.usedItemLatsPhase = true;
+
+            }
         }
        
     }
 
-    //public void fooSprinkler() {
-    //    sprinkler.SetActive(true);
-    //}
+    public void changeItem(string name) {
+        curItem = itemPairs[name];
+    }
 
-    //public void fooSun()
-    //{
-    //    artificialsun.SetActive(true);
-    //}
-
-    //public void fooCover()
-    //{
-    //    cover.SetActive(true);
-    //}
-
-    //public void fooLight()
-    //{
-
-    //}
 
 
 }

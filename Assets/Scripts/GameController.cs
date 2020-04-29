@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public enum GameScene {SpaceShip, PlantLand };
-    private GameScene myScene;
+    private GameScene curScene;
 
     [Header("Controller")]
     [SerializeField] private OxygenController myOxygenController;
@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private int curHour;
     [SerializeField] private int curMin;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -97,12 +98,15 @@ public class GameController : MonoBehaviour
                 myOxygenController.oxygenConsuming = false;
                 spaceShip.SetActive(true);
                 plantLand.SetActive(false);
+                curScene = GameScene.SpaceShip;
                 break;
             case GameScene.PlantLand:
                 myUIController.updateUI((int)GameScene.PlantLand);
                 myOxygenController.oxygenConsuming = true;
                 spaceShip.SetActive(false);
                 plantLand.SetActive(true);
+                curScene = GameScene.PlantLand;
+
                 break;
             default:
                 break;
@@ -122,5 +126,9 @@ public class GameController : MonoBehaviour
     public int getCurMin()
     {
         return curMin;
+    }
+
+    public GameScene getCurScene() {
+        return curScene;
     }
 }
