@@ -18,7 +18,7 @@ public class ClickItem : MonoBehaviour
         isCoolDown = false;
         mask = this.transform.Find("Mask").GetComponent<Image>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
-        coolDownTime = 10f;
+        coolDownTime = 192f;
         mask.fillAmount = 0;
         
     }
