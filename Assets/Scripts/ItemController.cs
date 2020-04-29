@@ -12,6 +12,7 @@ public class ItemController : MonoBehaviour
     public GameObject cover;
     public GameObject artificialsun;
     [SerializeField] public Image curItemUI;
+    [SerializeField] public Image itemInUse;
     
     [Header("Controller")]
     [SerializeField] private Plant plant;
@@ -85,6 +86,7 @@ public class ItemController : MonoBehaviour
         {
             if (!slotIsEmpty)
             {
+                itemInUse.sprite = curItemUI.sprite;
                 plant.UseCurItems(curItem);
                 curItemUI.sprite = null;
                 slotIsEmpty = true;

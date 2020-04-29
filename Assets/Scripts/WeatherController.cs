@@ -112,6 +112,7 @@ public class WeatherController : MonoBehaviour
         }
 
         usedItemLatsPhase = false;
+        myItemController.itemInUse.sprite = null;
 
         //curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
         float rateOfLevel = (float)Random.Range(0f, 1f);

@@ -476,6 +476,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f448b7aec4ba254daae8699a3a96c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2144235049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4096576372769334954, guid: 31ea8c37761cf6c4cadfb577fe73756a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7591043602138348723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &155309208225947061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1058,6 +1070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceShip
       objectReference: {fileID: 0}
+    - target: {fileID: 8075241354612427732, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8075241354612427733, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1375,6 +1392,11 @@ PrefabInstance:
       propertyPath: curItemUI
       value: 
       objectReference: {fileID: 1583298999}
+    - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
+        type: 3}
+      propertyPath: itemInUse
+      value: 
+      objectReference: {fileID: 2144235049}
     - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
         type: 3}
       propertyPath: plant

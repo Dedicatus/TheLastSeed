@@ -48,6 +48,7 @@ MonoBehaviour:
   cover: {fileID: 0}
   artificialsun: {fileID: 0}
   curItemUI: {fileID: 0}
+  itemInUse: {fileID: 0}
   plant: {fileID: 0}
   myWeatherController: {fileID: 0}
   myGameController: {fileID: 0}
