@@ -86,7 +86,7 @@ public class UIController : MonoBehaviour
     }
 
     public void updateWeather(WeatherController.weatherList weather){
-        print("inside weather got "+(int)weather);
+        //print("inside weather got "+(int)weather);
        switch((int)weather){
             case 0:
                 weatherText.text = "Acid Rain";

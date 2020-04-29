@@ -6,7 +6,7 @@ public class Plant : MonoBehaviour
 {
     public enum PlantStatus { Normal, A, B, C, D }  // ABCD suppose to be changed base on design later on 
 
-    private WeatherController myWeatherController;
+    [SerializeField] private WeatherController myWeatherController;
 
     [Header("Stage")]
     [SerializeField] private Sprite[] plantSprites;
@@ -33,7 +33,7 @@ public class Plant : MonoBehaviour
     [SerializeField] private float curHealth;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
         curStage = 0;
