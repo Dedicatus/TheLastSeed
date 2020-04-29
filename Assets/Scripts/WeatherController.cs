@@ -52,7 +52,7 @@ public class WeatherController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         usedItemLatsPhase = false;
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();

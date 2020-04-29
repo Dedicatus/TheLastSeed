@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.03, y: -0.029}
+  m_SizeDelta: {x: 1.559, y: 1.368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &915224918671926641
 CanvasRenderer:
@@ -58,17 +58,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6117647}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 913a5cbdcabf0174a9384d41e6d377eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33a4b2d0ad469254fbd8ed8827c5be6b, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0
+  m_FillAmount: 0.322
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   isCoolDown: 0
   mask: {fileID: 0}
   myItemController: {fileID: 0}
+  myGameController: {fileID: 0}
 --- !u!1 &829240412096863376
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +366,7 @@ MonoBehaviour:
   isCoolDown: 0
   mask: {fileID: 0}
   myItemController: {fileID: 0}
+  myGameController: {fileID: 0}
 --- !u!1 &1364170803932100911
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,8 +401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.047, y: -0.0471}
+  m_SizeDelta: {x: 1.522, y: 1.4117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8444802050849436849
 CanvasRenderer:
@@ -428,12 +430,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78df72adcf72ca1479294c4dc6cec28b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e88eb0dc592f51847a07baecf75dee69, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0
+  m_FillAmount: 0.633
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -686,6 +688,7 @@ MonoBehaviour:
   isCoolDown: 0
   mask: {fileID: 0}
   myItemController: {fileID: 0}
+  myGameController: {fileID: 0}
 --- !u!1 &4482236444477774823
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,8 +723,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0427, y: 0.0023}
+  m_SizeDelta: {x: 1.5225, y: 1.3997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8198218206462092985
 CanvasRenderer:
@@ -749,12 +752,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb5e8925279bce643a90e8d397181d01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66b8a7e00755e29409608140f4bda0e1, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0
+  m_FillAmount: 0.606
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -793,8 +796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.036, y: 0.109}
+  m_SizeDelta: {x: 1.583, y: 1.335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5450686111671963113
 CanvasRenderer:
@@ -822,12 +825,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3fb9259baaf000049bd2473463a1cf2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd767e35822bb3d4295167afd9e64da6, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0
+  m_FillAmount: 0.428
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1214,3 +1217,4 @@ MonoBehaviour:
   isCoolDown: 0
   mask: {fileID: 0}
   myItemController: {fileID: 0}
+  myGameController: {fileID: 0}

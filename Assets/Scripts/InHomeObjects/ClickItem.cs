@@ -12,12 +12,16 @@ public class ClickItem : MonoBehaviour
 
     private float coolDownTimer;
     [SerializeField] private ItemController myItemController;
+    [SerializeField] private GameController myGameController;
+
     // Start is called before the first frame update
     void Awake()
     {
         isCoolDown = false;
         mask = this.transform.Find("Mask").GetComponent<Image>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
+        myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+
         coolDownTime = 192f;
         mask.fillAmount = 0;
         
@@ -26,7 +30,7 @@ public class ClickItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCoolDown) {
+        if (isCoolDown && myGameController.timePassing) {
             coolDownTimer += Time.deltaTime;
             mask.fillAmount = 1 - coolDownTimer / coolDownTime;
 
