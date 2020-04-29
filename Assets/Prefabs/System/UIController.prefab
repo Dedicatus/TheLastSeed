@@ -43,5 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40be9e48eea0d264ca7c84c2c4b4146f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayText: {fileID: 0}
-  timeText: {fileID: 0}
+  hour1Text: {fileID: 0}
+  hour2Text: {fileID: 0}
+  min1Text: {fileID: 0}
+  min2Text: {fileID: 0}
+  dateText: {fileID: 0}
+  weatherText: {fileID: 0}
+  intensityText: {fileID: 0}
+  weatherImg: {fileID: 0}
+  weatherBackgroundImg: {fileID: 0}
+  acidRainSprite: {fileID: 21300000, guid: 8c078f9666f302948bbd22c3ae7b6dc1, type: 3}
+  sandStormSprite: {fileID: 21300000, guid: c0e9b8750dfab26429e82c658d14e93b, type: 3}
+  highTempSprite: {fileID: 21300000, guid: f9cf35488e43c49488304b79026136d3, type: 3}
+  coldSprite: {fileID: 21300000, guid: 2bcce1c7fbf30b44eb3eae5d8bbe133e, type: 3}
+  normalSprite: {fileID: 21300000, guid: 9a7c511085b878949996547699301529, type: 3}
+  plantInfoMenu: {fileID: 0}
+  stateText: {fileID: 0}
+  estimationText: {fileID: 0}
+  effectText: {fileID: 0}
+  protectionText: {fileID: 0}

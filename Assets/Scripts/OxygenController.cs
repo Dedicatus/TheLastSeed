@@ -16,7 +16,7 @@ public class OxygenController : MonoBehaviour
     [SerializeField] private float curOxygen;
     public bool oxygenConsuming = false;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         curOxygen = initialOxygen;

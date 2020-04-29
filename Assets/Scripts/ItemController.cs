@@ -23,7 +23,7 @@ public class ItemController : MonoBehaviour
     public items lastUsedItem;
     public items curItem;
 
-    public bool slotIsEmpty;
+    private bool slotIsEmpty;
 
     public Dictionary<string, ItemController.items> itemPairs;
 
@@ -40,6 +40,7 @@ public class ItemController : MonoBehaviour
         itemPairs.Add("Warming", items.Artificialsun);
         itemPairs.Add("Cover", items.Cover);
 
+        curItemUI.enabled = false;
         slotIsEmpty = true;
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
 
@@ -89,6 +90,7 @@ public class ItemController : MonoBehaviour
                 itemInUse.sprite = curItemUI.sprite;
                 plant.UseCurItems(curItem);
                 curItemUI.sprite = null;
+                curItemUI.enabled = false;
                 slotIsEmpty = true;
                 lastUsedItem = curItem;
                 myWeatherController.usedItemLatsPhase = true;
@@ -100,6 +102,8 @@ public class ItemController : MonoBehaviour
 
     public void changeItem(string name) {
         curItem = itemPairs[name];
+        slotIsEmpty = false;
+        curItemUI.enabled = true;
     }
 
 

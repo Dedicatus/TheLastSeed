@@ -235,18 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &805664686 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 805664686, guid: 43410e5545571084e87699dab2493aba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5119766793190549720}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &990338441 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
@@ -344,16 +332,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1263265942 stripped
+--- !u!114 &1299197018 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1263265942, guid: 43410e5545571084e87699dab2493aba,
+  m_CorrespondingSourceObject: {fileID: 1299197018, guid: 43410e5545571084e87699dab2493aba,
     type: 3}
   m_PrefabInstance: {fileID: 5119766793190549720}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1319289303 stripped
@@ -429,7 +417,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 5119766793190549720}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -556,18 +544,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1224790934}
     m_Modifications:
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: dayText
-      value: 
-      objectReference: {fileID: 805664686}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: timeText
-      value: 
-      objectReference: {fileID: 1263265942}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: plantInfoMenu
-      value: 
-      objectReference: {fileID: 1763804221}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
       propertyPath: hour1Text
       value: 
       objectReference: {fileID: 5119766793190549724}
@@ -592,34 +568,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2061419134}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: intensityText
+      value: 
+      objectReference: {fileID: 1299197018}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
       propertyPath: weatherImg
       value: 
       objectReference: {fileID: 250602950}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: acidRainSprite
+      propertyPath: weatherBackgroundImg
       value: 
-      objectReference: {fileID: 21300000, guid: 8c078f9666f302948bbd22c3ae7b6dc1,
-        type: 3}
+      objectReference: {fileID: 669675593}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: highTempSprite
+      propertyPath: plantInfoMenu
       value: 
-      objectReference: {fileID: 21300000, guid: f9cf35488e43c49488304b79026136d3,
-        type: 3}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: normalSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9a7c511085b878949996547699301529,
-        type: 3}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: coldSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2bcce1c7fbf30b44eb3eae5d8bbe133e,
-        type: 3}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: sandStormSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c0e9b8750dfab26429e82c658d14e93b,
-        type: 3}
+      objectReference: {fileID: 1763804221}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
       propertyPath: stateText
       value: 
@@ -629,17 +592,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1319289303}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: protectionText
-      value: 
-      objectReference: {fileID: 1442395577}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
       propertyPath: effectText
       value: 
       objectReference: {fileID: 1431392964}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: weatherBackgroundImg
+      propertyPath: protectionText
       value: 
-      objectReference: {fileID: 669675593}
+      objectReference: {fileID: 1442395577}
     - target: {fileID: 155309207058801358, guid: c201464c1f2b8f54ca4af582d2898556,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -778,21 +737,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1650829906225925063, guid: 43410e5545571084e87699dab2493aba,
-        type: 3}
-      propertyPath: myOxygenController
-      value: 
-      objectReference: {fileID: 1907761806}
     - target: {fileID: 1854819783690038635, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503694483}
-    - target: {fileID: 3258991690354803911, guid: 43410e5545571084e87699dab2493aba,
-        type: 3}
-      propertyPath: oxygenController
-      value: 
-      objectReference: {fileID: 1907761806}
     - target: {fileID: 3923761250718428077, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1099,8 +1048,34 @@ PrefabInstance:
     - target: {fileID: 7591043600786894693, guid: 31ea8c37761cf6c4cadfb577fe73756a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7591043601547681164, guid: 31ea8c37761cf6c4cadfb577fe73756a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591043601547681164, guid: 31ea8c37761cf6c4cadfb577fe73756a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591043601547681164, guid: 31ea8c37761cf6c4cadfb577fe73756a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591043601547681164, guid: 31ea8c37761cf6c4cadfb577fe73756a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591043601547681267, guid: 31ea8c37761cf6c4cadfb577fe73756a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aca072ce6a066464b877cf5481931968,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ea8c37761cf6c4cadfb577fe73756a, type: 3}
 --- !u!1001 &8075241355137965482
@@ -1179,6 +1154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075241354612427732, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8075241354612427733, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}

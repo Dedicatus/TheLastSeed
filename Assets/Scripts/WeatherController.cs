@@ -20,6 +20,8 @@ public class WeatherController : MonoBehaviour
 
     private GameController myGameController;
     private ItemController myItemController;
+    private UIController myUIController;
+
     [SerializeField] private Plant plant;
     [SerializeField] private GameObject cover;
 
@@ -57,6 +59,7 @@ public class WeatherController : MonoBehaviour
         usedItemLatsPhase = false;
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
+        myUIController = GameObject.FindWithTag("GameController").transform.parent.Find("UIController").GetComponent<UIController>();
         comingWeather = weatherList.Normal;
         weatherMassage.text = "";
 
@@ -157,6 +160,7 @@ public class WeatherController : MonoBehaviour
         //}
 
         plant.applyWeatherCondition();
+        myUIController.updateWeather(curWeather);
     }
 
     // FUNCTIONS HANDLING DIFFERENT WEATHER CHANGE

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6365671995942151050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4873559916339840779}
-  - component: {fileID: 7461648276899886977}
+  - component: {fileID: 8655413687648024558}
   m_Layer: 0
   m_Name: barHolder
   m_TagString: Untagged
@@ -183,7 +183,7 @@ RectTransform:
   m_AnchoredPosition: {x: -25.5, y: -14.9}
   m_SizeDelta: {x: 50, y: 296.04}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &7461648276899886977
+--- !u!114 &8655413687648024558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,11 +192,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678798550142686483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3f8e6c40d13ae459b27962e10493f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c271551fcfce954d8f1b70ce522b228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenController: {fileID: 0}
-  topColor: {fileID: 0}
 --- !u!1 &1877694210510996755
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +230,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 150, y: 350}
+  m_SizeDelta: {x: 30, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6281989876120601539
 CanvasRenderer:
@@ -260,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7eca212bc171c7a47a5d7f93dea98c6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf7001af0186ba14484083dd0a4313bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -304,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 20, y: 293.62}
-  m_SizeDelta: {x: 20, y: 291.2}
+  m_AnchoredPosition: {x: 10.8, y: 355.2}
+  m_SizeDelta: {x: 20, y: 420}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7842258609493002473
 CanvasRenderer:
@@ -328,12 +326,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.21333215, b: 0.21333215, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 039dd549976982140b88bc542a437d9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -400,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3389574083729301842
 RectTransform:
   m_ObjectHideFlags: 0

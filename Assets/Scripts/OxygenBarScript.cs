@@ -19,7 +19,7 @@ public class OxygenBarScript : MonoBehaviour
     void Update()
     {
         setOxygenLevelinUI();
-        changeColor();
+        //changeColor();
     }
 
     public void setOxygenLevelinUI(){

@@ -51,7 +51,6 @@ public class ClickItem : MonoBehaviour
             mask.fillAmount = 1;
             myItemController.curItemUI.sprite = this.GetComponent<Image>().sprite;
             myItemController.changeItem(this.name);
-            myItemController.slotIsEmpty = false;
             
         }
     }

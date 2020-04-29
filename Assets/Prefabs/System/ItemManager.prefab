@@ -54,4 +54,3 @@ MonoBehaviour:
   myGameController: {fileID: 0}
   lastUsedItem: 0
   curItem: 0
-  slotIsEmpty: 0
