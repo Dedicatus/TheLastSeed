@@ -113,7 +113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Growing
+  m_Text: OverHeating
 --- !u!1 &3393358645458379445
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,16 +245,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5686275, g: 0.7803922, b: 0.3921569, a: 1}
+  m_Color: {r: 0.7264151, g: 0.44201672, b: 0.57359153, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: a4560f52746bad24393633f5e7d4f18a, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -536,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8980961277370935490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -581,3 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e27ff2bb3c70634783be608b771896d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateText: {fileID: 8663814360745123922}
+  estimationText: {fileID: 183256357696830465}
+  vitalityBar: {fileID: 8827603479495979616}
+  myPlant: {fileID: 0}
