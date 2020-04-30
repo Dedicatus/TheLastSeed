@@ -12,8 +12,7 @@ public class WeatherController : MonoBehaviour
     private float lastTimer;
     [SerializeField] float normalTime;
     private float normalTimer;
-    public weatherList curWeather;
-    public weatherList comingWeather;
+   
     [SerializeField] bool inAccident;
     [SerializeField] Text weatherMassage;
     [SerializeField] Text comingWeatherMessage;
@@ -47,8 +46,11 @@ public class WeatherController : MonoBehaviour
 
     [SerializeField] int curLevel;
 
+    [Header("Debug")]
+    public weatherList curWeather;
+    public weatherList comingWeather;
 
-     public Dictionary <ItemController.items, weatherList> weatherPairs;
+    public Dictionary <ItemController.items, weatherList> weatherPairs;
 
     public bool usedItemLatsPhase;
 
@@ -101,7 +103,7 @@ public class WeatherController : MonoBehaviour
                 {
                     curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
 
-                } while (curWeather != lastweather);
+                } while (curWeather == lastweather);
             }
 
             else

@@ -1283,6 +1283,11 @@ PrefabInstance:
       propertyPath: timePassing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
+        type: 3}
+      propertyPath: secPerQuarter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8760379080133693073, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: m_LocalPosition.x
