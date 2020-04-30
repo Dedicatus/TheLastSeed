@@ -40,6 +40,7 @@ public class ItemController : MonoBehaviour
         itemPairs.Add("Warming", items.Artificialsun);
         itemPairs.Add("Cover", items.Cover);
 
+
         curItemUI.enabled = false;
         slotIsEmpty = true;
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
@@ -87,6 +88,7 @@ public class ItemController : MonoBehaviour
         {
             if (!slotIsEmpty)
             {
+                itemInUse.enabled = true;
                 itemInUse.sprite = curItemUI.sprite;
                 plant.UseCurItems(curItem);
                 curItemUI.sprite = null;
@@ -96,6 +98,7 @@ public class ItemController : MonoBehaviour
                 myWeatherController.usedItemLatsPhase = true;
 
             }
+
         }
        
     }

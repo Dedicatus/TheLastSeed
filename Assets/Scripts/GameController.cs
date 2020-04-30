@@ -128,6 +128,11 @@ public class GameController : MonoBehaviour
         return curMin;
     }
 
+    public float getSecPerQuarter()
+    {
+        return secPerQuarter;
+    }
+
     public GameScene getCurScene() {
         return curScene;
     }

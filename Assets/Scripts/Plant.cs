@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public enum PlantStatus { Normal, A, B, C, D }  // ABCD suppose to be changed base on design later on 
+    public enum PlantStatus { Growing, Corrupting, Stifling, OverHeating, Freezing };
 
     [SerializeField] private WeatherController myWeatherController;
+    [SerializeField] private GameController myGameController;
+    [SerializeField] private PlantDisplay myPlantDisplay;
 
     [Header("Stage")]
-    [SerializeField] private Sprite[] plantSprites;
     [SerializeField] private float[] healthToStages;
 
     [Header("Status")]
@@ -25,9 +26,9 @@ public class Plant : MonoBehaviour
     [SerializeField] private float HealthRecover = 1f;
 
     [Header("Debug")]
-    [SerializeField] private PlantStatus myStatus = PlantStatus.Normal;
+    [SerializeField] private PlantStatus myStatus = PlantStatus.Growing;
     [SerializeField] private float curDamage;
-    [SerializeField] private int maxStage;
+    [SerializeField] private int maxStage = 4;
     [SerializeField] private int curStage;
     [SerializeField] private int dayUntilNextStage = 0;
     [SerializeField] private float curHealth;
@@ -37,8 +38,7 @@ public class Plant : MonoBehaviour
     {
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
         curStage = 0;
-        maxStage = plantSprites.Length;
-        gameObject.GetComponent<SpriteRenderer>().sprite = plantSprites[curStage];
+        maxStage = myPlantDisplay.getMaxStage();
         curHealth = initHealth;
         dayUntilNextStage = stageDayGap;
     }
@@ -46,16 +46,19 @@ public class Plant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myStatus != PlantStatus.Normal)
+        if (myGameController.timePassing)
         {
-            curHealth -= curDamage * Time.deltaTime;
-        }
-        else
-        {
-            curHealth += HealthRecover * Time.deltaTime;
-            if (curHealth >= healthToStages[curStage])
+            if (myStatus != PlantStatus.Growing)
             {
-                ++curStage;
+                curHealth -= curDamage * Time.deltaTime;
+            }
+            else
+            {
+                curHealth += HealthRecover * Time.deltaTime;
+                if (curHealth >= healthToStages[curStage])
+                {
+                    ++curStage;
+                }
             }
         }
     }
@@ -65,7 +68,7 @@ public class Plant : MonoBehaviour
         if (curStage + 1 <= maxStage)
         {
             ++curStage;
-            gameObject.GetComponent<SpriteRenderer>().sprite = plantSprites[curStage];
+            myPlantDisplay.nextStage();
         }
         else
         {
@@ -116,19 +119,19 @@ public class Plant : MonoBehaviour
             switch (myWeatherController.GetCurWeather())
             {
                 case WeatherController.weatherList.Normal:
-                    //Do something
+                    myStatus = PlantStatus.Growing;
                     break;
                 case WeatherController.weatherList.AcidRain:
-                    myStatus = PlantStatus.A;
+                    myStatus = PlantStatus.Corrupting;
                     break;
                 case WeatherController.weatherList.SandStorm:
-                    myStatus = PlantStatus.B;
+                    myStatus = PlantStatus.Stifling;
                     break;
                 case WeatherController.weatherList.HighTemp:
-                    myStatus = PlantStatus.C;
+                    myStatus = PlantStatus.OverHeating;
                     break;
                 case WeatherController.weatherList.Cold:
-                    myStatus = PlantStatus.D;
+                    myStatus = PlantStatus.Freezing;
                     break;
                 default:
                     break;
@@ -138,7 +141,10 @@ public class Plant : MonoBehaviour
 
     }
 
-    
+    public int getCurStage()
+    {
+        return curStage;
+    }
     public int getDayUntilNextStage()
     {
         return dayUntilNextStage;
@@ -155,10 +161,49 @@ public class Plant : MonoBehaviour
         return healthToStages[curStage];
     }
 
+    public float getLastStageMaxHealth()
+    {
+        if (curStage >= 1)
+        {
+            return healthToStages[curStage - 1];
+        }
+        else
+        {
+            return 0f;
+        }
+        
+    }
+
+    public string getEstimationText()
+    {
+        string estimationString = "";
+        int hour = 0;
+        if (myStatus == PlantStatus.Growing)
+        {
+            hour = (int)Mathf.Round(((healthToStages[curStage] - curHealth) / HealthRecover) / (myGameController.getSecPerQuarter() * 4.0f));
+            //Debug.Log(hour);
+            estimationString = "Next Stage in " + hour.ToString() + " hour";
+            if (hour >= 1) { estimationString += "s"; }
+        }
+        else
+        {
+            hour = (int)Mathf.Round(((curHealth - getLastStageMaxHealth()) / curDamage) / (myGameController.getSecPerQuarter() * 4.0f));
+            //Debug.Log(hour);
+            estimationString = "Withering in " + hour.ToString() + " hour";
+            if (hour >= 1) { estimationString += "s"; }
+        }
+        return estimationString;
+    }
+
+    public PlantStatus getCurState()
+    {
+        return myStatus;
+    }
+
     public void UseCurItems(ItemController.items curItem) {
         if (myWeatherController.curWeather == myWeatherController.weatherPairs[curItem])
         {
-            myStatus = PlantStatus.Normal;
+            myStatus = PlantStatus.Growing;
         }
     }
    
