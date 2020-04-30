@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public enum GameScene {SpaceShip, PlantLand };
+    public enum GameState { MainMenu, InGame, Succeed, Failed }
+    [SerializeField] private GameState curState;
+
+    public enum GameScene { SpaceShip, PlantLand };
     private GameScene curScene;
+
+    [Header("System")]
+    public bool hasOpening;
+    public bool hasTutorial;
 
     [Header("Controller")]
     [SerializeField] private OxygenController myOxygenController;
     [SerializeField] private UIController myUIController;
-    [SerializeField] private Plant myPlant;
+    [SerializeField] private Plant myPlantController;
     [SerializeField] private WeatherController myWeatherController;
 
     [Header("Scene")]
     [SerializeField] private GameObject spaceShip;
-    [SerializeField] private GameObject plantLand;  
+    [SerializeField] private GameObject plantLand;
 
     [Header("Time")]
     [SerializeField] private float secPerQuarter = 15.0f; //Seconds per 15 mins in game
@@ -28,12 +35,18 @@ public class GameController : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private int curHour;
     [SerializeField] private int curMin;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         //initialize variables
+        curState = GameState.MainMenu;
+        initialization();
+    }
+
+    private void initialization()
+    {
         myOxygenController.oxygenConsuming = false;
         spaceShip.SetActive(true);
         plantLand.SetActive(false);
@@ -43,6 +56,7 @@ public class GameController : MonoBehaviour
         myWeatherController.changeWeather();
         curMin = 0;
         curDay = 1;
+        myPlantController.initialization();
     }
 
     // Update is called once per frame
@@ -77,14 +91,20 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+    private void inputHandler()
+    {
+        
+    }
+
     private void dayPass()
     {
         curHour = dayStartHour;
         curMin = 0;
         ++curDay;
         myUIController.updateDayText();
-        myOxygenController.addOxygen(myPlant.getCurOxygenSupply());
-        myPlant.dayPassed();
+        myOxygenController.addOxygen(myPlantController.getCurOxygenSupply());
+        myPlantController.dayPassed();
         myWeatherController.changeWeather();
     }
 
@@ -105,7 +125,6 @@ public class GameController : MonoBehaviour
                 spaceShip.SetActive(false);
                 plantLand.SetActive(true);
                 curScene = GameScene.PlantLand;
-
                 break;
             default:
                 break;
@@ -132,7 +151,36 @@ public class GameController : MonoBehaviour
         return secPerQuarter;
     }
 
-    public GameScene getCurScene() {
+    public GameScene getCurScene()
+    {
         return curScene;
+    }
+
+    public void gameStart()
+    {
+        curState = GameState.InGame;
+        initialization();
+        myUIController.gameStart();
+        if (!hasOpening && !hasTutorial) { timePassing = true; }
+    }
+
+    public void gameSucceed()
+    {
+        timePassing = false;
+        curState = GameState.Succeed;
+        myUIController.showEndScreen(curState);
+    }
+
+    public void gameFailed()
+    {
+        timePassing = false;
+        curState = GameState.Failed;
+        myUIController.showEndScreen(curState);
+    }
+
+    public void gameEnd()
+    {
+        curState = GameState.MainMenu;
+        initialization();
     }
 }

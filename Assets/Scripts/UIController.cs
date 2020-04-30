@@ -8,6 +8,12 @@ public class UIController : MonoBehaviour
     private GameController myGameController;
     private WeatherController myWeatherController;
 
+    [Header("System")]
+    [SerializeField] private GameObject openingVideo;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject succeedMenu;
+    [SerializeField] private GameObject failedMenu;
+
     [Header("Clock")]
     [SerializeField] private TextMeshProUGUI hour1Text;
     [SerializeField] private TextMeshProUGUI hour2Text;
@@ -35,13 +41,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private Sprite normalSprite;
 
     [Header("Plant Info")]
-    //[SerializeField] private UnityEngine.UI.Text dayText;
-    //[SerializeField] private UnityEngine.UI.Text timeText;
     [SerializeField] private GameObject plantInfoMenu;
-    [SerializeField] private TextMeshProUGUI stateText;
-    [SerializeField] private TextMeshProUGUI estimationText;
-    [SerializeField] private TextMeshProUGUI effectText;
-    [SerializeField] private TextMeshProUGUI protectionText;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -153,4 +154,32 @@ public class UIController : MonoBehaviour
         weatherChangeAnimation.SetTrigger("Play");
     }
 
+    public void gameStart()
+    {
+        mainMenu.SetActive(false);
+        if (myGameController.hasOpening) { openingVideo.SetActive(true); }
+    }
+
+    public void showEndScreen(GameController.GameState state)
+    {
+        if (state == GameController.GameState.Succeed)
+        {
+            succeedMenu.SetActive(true);
+        }
+        else if (state == GameController.GameState.Failed)
+        {
+            failedMenu.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Game State Error");
+        }
+    }
+
+    public void resetUI()
+    {
+        mainMenu.SetActive(true);
+        succeedMenu.SetActive(false);
+        failedMenu.SetActive(false);
+    }
 }

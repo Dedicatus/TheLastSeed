@@ -187,6 +187,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8075241355137965482}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &577456998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 577456998, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637971677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7591043601634922606, guid: 31ea8c37761cf6c4cadfb577fe73756a,
@@ -205,6 +211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &728930335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 728930335, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &784967007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3007111765842363511, guid: 43410e5545571084e87699dab2493aba,
@@ -357,9 +369,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e362f3d0188c64447bb6b5911ce5c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1582601283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1582601283, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763804221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2318595597340294038, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1803598905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1803598905, guid: 43410e5545571084e87699dab2493aba,
     type: 3}
   m_PrefabInstance: {fileID: 5119766793190549720}
   m_PrefabAsset: {fileID: 0}
@@ -526,6 +550,22 @@ PrefabInstance:
       propertyPath: plantInfoMenu
       value: 
       objectReference: {fileID: 1763804221}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: openingVideo
+      value: 
+      objectReference: {fileID: 1803598905}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 728930335}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: succeedMenu
+      value: 
+      objectReference: {fileID: 1582601283}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: failedMenu
+      value: 
+      objectReference: {fileID: 577456998}
     - target: {fileID: 155309207058801358, guid: c201464c1f2b8f54ca4af582d2898556,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -664,6 +704,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 307309585, guid: 43410e5545571084e87699dab2493aba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 990338441}
+    - target: {fileID: 857272443, guid: 43410e5545571084e87699dab2493aba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 990338441}
+    - target: {fileID: 1787787292, guid: 43410e5545571084e87699dab2493aba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 990338441}
     - target: {fileID: 1854819783690038635, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -893,6 +945,11 @@ PrefabInstance:
       propertyPath: myPlantDisplay
       value: 
       objectReference: {fileID: 1532374615}
+    - target: {fileID: 5367033297485327035, guid: 188d739c3d475fd4a96fc514b99e8067,
+        type: 3}
+      propertyPath: HealthRecover
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5367033297485327037, guid: 188d739c3d475fd4a96fc514b99e8067,
         type: 3}
       propertyPath: m_Name
@@ -1290,12 +1347,27 @@ PrefabInstance:
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: timePassing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: secPerQuarter
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
+        type: 3}
+      propertyPath: opening
+      value: 
+      objectReference: {fileID: 1803598905}
+    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
+        type: 3}
+      propertyPath: myPlantController
+      value: 
+      objectReference: {fileID: 1947659293}
+    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
+        type: 3}
+      propertyPath: hasOpening
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8760379080133693073, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}

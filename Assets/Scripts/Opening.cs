@@ -10,6 +10,7 @@ public class Opening : MonoBehaviour
     private bool started;
     private float timer;
     private float waitTime = 3.0f;
+
     // Start is called before the first frame update
     void Awake()
     {

@@ -10,7 +10,7 @@ public class PlantInfo : MonoBehaviour
     [SerializeField] private Image vitalityBar;
 
     [SerializeField] private Plant myPlant;
-    private Plant.PlantStatus myState;
+    private Plant.PlantState myState;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,7 +29,7 @@ public class PlantInfo : MonoBehaviour
 
     private void updateVitalityBar()
     {
-        if (myPlant.getCurState() == Plant.PlantStatus.Growing)
+        if (myPlant.getCurState() == Plant.PlantState.Growing)
         {
             vitalityBar.color = new Color(145.0f/255.0f, 199.0f / 255.0f, 100.0f / 255.0f);
         }
@@ -45,19 +45,19 @@ public class PlantInfo : MonoBehaviour
     {
         switch (myPlant.getCurState())
         {
-            case Plant.PlantStatus.Growing:
+            case Plant.PlantState.Growing:
                 stateText.text = "Growing";
                 break;
-            case Plant.PlantStatus.Corrupting:
+            case Plant.PlantState.Corrupting:
                 stateText.text = "Corrupting";
                 break;
-            case Plant.PlantStatus.Stifling:
+            case Plant.PlantState.Stifling:
                 stateText.text = "Stifling";
                 break;
-            case Plant.PlantStatus.OverHeating:
+            case Plant.PlantState.OverHeating:
                 stateText.text = "OverHeating";
                 break;
-            case Plant.PlantStatus.Freezing:
+            case Plant.PlantState.Freezing:
                 stateText.text = "Freezing";
                 break;
             default:

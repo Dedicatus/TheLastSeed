@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public enum PlantStatus { Growing, Corrupting, Stifling, OverHeating, Freezing };
+    public enum PlantState { Growing, Corrupting, Stifling, OverHeating, Freezing };
 
     [SerializeField] private WeatherController myWeatherController;
     [SerializeField] private GameController myGameController;
@@ -19,15 +19,12 @@ public class Plant : MonoBehaviour
     [SerializeField] private float lv2DebuffChance = 0.4f;
     [SerializeField] private float lv3DebuffChance = 0.6f;
 
-    [Header("Time")]
-    [SerializeField] private int stageDayGap = 3;
-
     [Header("Health")]
     [SerializeField] private float initHealth = 100f;
     [SerializeField] private float HealthRecover = 1f;
 
     [Header("Debug")]
-    [SerializeField] private PlantStatus myStatus = PlantStatus.Growing;
+    [SerializeField] private PlantState curState = PlantState.Growing;
     [SerializeField] private float curDamage;
     [SerializeField] private int maxStage = 4;
     [SerializeField] private int curStage;
@@ -38,10 +35,15 @@ public class Plant : MonoBehaviour
     void Awake()
     {
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
-        curStage = 0;
         maxStage = myPlantDisplay.getMaxStage();
+        initialization();
+    }
+
+    public void initialization()
+    {
+        curStage = 0;
         curHealth = initHealth;
-        dayUntilNextStage = stageDayGap;
+        curState = PlantState.Growing;
     }
 
     // Update is called once per frame
@@ -49,9 +51,13 @@ public class Plant : MonoBehaviour
     {
         if (myGameController.timePassing)
         {
-            if (myStatus != PlantStatus.Growing)
+            if (curState != PlantState.Growing)
             {
                 curHealth -= curDamage * Time.deltaTime;
+                if (curHealth <= 0)
+                {
+                    myGameController.gameFailed();
+                }
             }
             else
             {
@@ -59,7 +65,10 @@ public class Plant : MonoBehaviour
                 if (curHealth >= healthToStages[curStage])
                 {
                     ++curStage;
-                    if (curStage >= 4) { }
+                    if (curStage >= 4)
+                    {
+                        myGameController.gameSucceed();
+                    }
                 }
             }
         }
@@ -77,7 +86,7 @@ public class Plant : MonoBehaviour
             Debug.LogError("Plant max stage reached!");
         }
     }
-
+    /*
     private void addHealth(int n)
     {
         if (curStage >= maxStage)
@@ -89,11 +98,11 @@ public class Plant : MonoBehaviour
             curHealth += n;
             if (curHealth <= 0)
             {
-                //GameOver
+                myGameController.gameFailed();
             }
         }
     }
-
+    */
     public void dayPassed()
     {
        
@@ -121,19 +130,19 @@ public class Plant : MonoBehaviour
             switch (myWeatherController.GetCurWeather())
             {
                 case WeatherController.weatherList.Normal:
-                    myStatus = PlantStatus.Growing;
+                    curState = PlantState.Growing;
                     break;
                 case WeatherController.weatherList.AcidRain:
-                    myStatus = PlantStatus.Corrupting;
+                    curState = PlantState.Corrupting;
                     break;
                 case WeatherController.weatherList.SandStorm:
-                    myStatus = PlantStatus.Stifling;
+                    curState = PlantState.Stifling;
                     break;
                 case WeatherController.weatherList.HighTemp:
-                    myStatus = PlantStatus.OverHeating;
+                    curState = PlantState.OverHeating;
                     break;
                 case WeatherController.weatherList.Cold:
-                    myStatus = PlantStatus.Freezing;
+                    curState = PlantState.Freezing;
                     break;
                 default:
                     break;
@@ -185,7 +194,7 @@ public class Plant : MonoBehaviour
     {
         string estimationString = "";
         int hour = 0;
-        if (myStatus == PlantStatus.Growing)
+        if (curState == PlantState.Growing)
         {
             hour = (int)Mathf.Round(((healthToStages[curStage] - curHealth) / HealthRecover) / (myGameController.getSecPerQuarter() * 4.0f));
             //Debug.Log(hour);
@@ -202,15 +211,15 @@ public class Plant : MonoBehaviour
         return estimationString;
     }
 
-    public PlantStatus getCurState()
+    public PlantState getCurState()
     {
-        return myStatus;
+        return curState;
     }
 
     public void UseCurItems(ItemController.items curItem) {
         if (myWeatherController.curWeather == myWeatherController.weatherPairs[curItem])
         {
-            myStatus = PlantStatus.Growing;
+            curState = PlantState.Growing;
         }
     }
    
