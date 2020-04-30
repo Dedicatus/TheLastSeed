@@ -12,6 +12,7 @@ public class Plant : MonoBehaviour
 
     [Header("Stage")]
     [SerializeField] private float[] healthToStages;
+    [SerializeField] private float[] oxygenSupplyOfStages;
 
     [Header("Status")]
     [SerializeField] private float lv1DebuffChance = 0.2f;
@@ -58,6 +59,7 @@ public class Plant : MonoBehaviour
                 if (curHealth >= healthToStages[curStage])
                 {
                     ++curStage;
+                    if (curStage >= 4) { }
                 }
             }
         }
@@ -153,6 +155,11 @@ public class Plant : MonoBehaviour
     public float getCurHealth()
     {
         return curHealth;
+    }
+
+    public float getCurOxygenSupply()
+    {
+        return oxygenSupplyOfStages[curStage];
     }
 
     //UI

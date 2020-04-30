@@ -80,7 +80,6 @@ public class WeatherController : MonoBehaviour
         lastTimer = 0f;
         normalTime = 40f;
         normalTimer = 0f;
-
     }
 
     // Update is called once per frame

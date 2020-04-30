@@ -169,6 +169,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7591043602138348723}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &565723316 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 565723316, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &566040190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8075241354612427732, guid: 1009ae9fc36f14743a7486edefebb5b4,
@@ -357,6 +363,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5119766793190549720}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1825066558 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1825066558, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888654294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7591043600786894693, guid: 31ea8c37761cf6c4cadfb577fe73756a,
@@ -487,6 +499,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5119766793190549725}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: oxygenBarAnimation
+      value: 
+      objectReference: {fileID: 1825066558}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
       propertyPath: weatherText
       value: 
       objectReference: {fileID: 2061419134}
@@ -503,25 +519,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 669675593}
     - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+      propertyPath: weatherChangeAnimation
+      value: 
+      objectReference: {fileID: 565723316}
+    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
       propertyPath: plantInfoMenu
       value: 
       objectReference: {fileID: 1763804221}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: stateText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: estimationText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: effectText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337065340, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
-      propertyPath: protectionText
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 155309207058801358, guid: c201464c1f2b8f54ca4af582d2898556,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -928,6 +932,11 @@ PrefabInstance:
       propertyPath: cover
       value: 
       objectReference: {fileID: 637971677}
+    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
+        type: 3}
+      propertyPath: weatherChange
+      value: 
+      objectReference: {fileID: 565723316}
     - target: {fileID: 9031841064259888011, guid: 5ba32875e67da6943bfc20641359a3d7,
         type: 3}
       propertyPath: m_LocalPosition.x

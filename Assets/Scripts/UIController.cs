@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     private GameController myGameController;
     private WeatherController myWeatherController;
+
     [Header("Clock")]
     [SerializeField] private TextMeshProUGUI hour1Text;
     [SerializeField] private TextMeshProUGUI hour2Text;
@@ -16,11 +17,15 @@ public class UIController : MonoBehaviour
     [Header("Date")]
     [SerializeField] private TextMeshProUGUI dateText;
 
+    [Header("Oxygen")]
+    [SerializeField] private Animator oxygenBarAnimation;
+
     [Header("Weather")]
     [SerializeField] private TextMeshProUGUI weatherText;
     [SerializeField] private TextMeshProUGUI intensityText;
     [SerializeField] private UnityEngine.UI.Image weatherImg;
     [SerializeField] private UnityEngine.UI.Image weatherBackgroundImg;
+    [SerializeField] private Animator weatherChangeAnimation;
 
     [Header("Weather Sprites")]
     [SerializeField] private Sprite acidRainSprite;
@@ -92,15 +97,18 @@ public class UIController : MonoBehaviour
         if(targetScene == (int) GameController.GameScene.PlantLand)
         {
             plantInfoMenu.SetActive(true);
-        } else
+            oxygenBarAnimation.SetTrigger("Exit");
+        }
+        else
         {
             plantInfoMenu.SetActive(false);
+            oxygenBarAnimation.SetTrigger("Enter");
         }
     }
 
     public void updateWeather(WeatherController.weatherList weather)
     {
-       switch((int)weather)
+        switch((int)weather)
         {
             case 0:
                 weatherText.text = "Acid Rain";
@@ -134,12 +142,15 @@ public class UIController : MonoBehaviour
                 break;
             default:
                 break;
-       }
+        }
+
         intensityText.text = "";
         for (int i = 0; i < myWeatherController.getWeatherLevel(); ++i)
         {
             intensityText.text += "I";
         }
+
+        weatherChangeAnimation.SetTrigger("Play");
     }
 
 }

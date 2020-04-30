@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private Plant myPlant;
     [SerializeField] private WeatherController myWeatherController;
 
-
     [Header("Scene")]
     [SerializeField] private GameObject spaceShip;
     [SerializeField] private GameObject plantLand;  
@@ -23,9 +22,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private int dayStartHour = 7;
     [SerializeField] private int dayEndHour = 23;
     [SerializeField] private int curDay;
-
-    [Header("Oxygen")]
-    [SerializeField] private float dailyOxygenSupply = 200.0f;
 
     [Header("Debug")]
     public bool timePassing;
@@ -38,7 +34,10 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //initialize variables
-        changeScene(GameScene.SpaceShip);
+        myOxygenController.oxygenConsuming = false;
+        spaceShip.SetActive(true);
+        plantLand.SetActive(false);
+        curScene = GameScene.SpaceShip;
         timer = 0;
         curHour = dayStartHour;
         myWeatherController.changeWeather();
@@ -84,7 +83,7 @@ public class GameController : MonoBehaviour
         curMin = 0;
         ++curDay;
         myUIController.updateDayText();
-        myOxygenController.addOxygen(dailyOxygenSupply);
+        myOxygenController.addOxygen(myPlant.getCurOxygenSupply());
         myPlant.dayPassed();
         myWeatherController.changeWeather();
     }

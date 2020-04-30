@@ -50,6 +50,11 @@ MonoBehaviour:
   - 200
   - 400
   - 600
+  oxygenSupplyOfStages:
+  - 100
+  - 200
+  - 300
+  - 400
   lv1DebuffChance: 1
   lv2DebuffChance: 1
   lv3DebuffChance: 1
