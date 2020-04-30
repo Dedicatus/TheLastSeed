@@ -1262,7 +1262,7 @@ PrefabInstance:
         type: 3}
       propertyPath: myPlant
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1947659293}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: myWeatherController
