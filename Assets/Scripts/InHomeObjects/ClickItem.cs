@@ -14,9 +14,12 @@ public class ClickItem : MonoBehaviour
     [SerializeField] private ItemController myItemController;
     [SerializeField] private GameController myGameController;
 
+    [SerializeField] private float accerateValue;
+
     // Start is called before the first frame update
     void Awake()
     {
+        accerateValue = 3f;
         isCoolDown = false;
         mask = this.transform.Find("Mask").GetComponent<Image>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
@@ -50,8 +53,14 @@ public class ClickItem : MonoBehaviour
             isCoolDown = true;
             mask.fillAmount = 1;
             myItemController.curItemUI.sprite = this.GetComponent<Image>().sprite;
-            myItemController.changeItem(this.name);
-            
+            myItemController.changeItem(this.name);     
+        }
+    }
+
+    public void SpeedUp() {
+
+        if (isCoolDown) { 
+            coolDownTimer += accerateValue;
         }
     }
 }
