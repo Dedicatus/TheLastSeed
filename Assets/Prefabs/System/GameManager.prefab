@@ -45,15 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curState: 0
   hasOpening: 1
-  hasTutorial: 1
-  canChangeScene: 0
+  hasTutorial: 0
   myOxygenController: {fileID: 0}
   myUIController: {fileID: 0}
   myPlantController: {fileID: 0}
   myWeatherController: {fileID: 0}
   myItemController: {fileID: 0}
   myAudioController: {fileID: 0}
-  myTutorialController: {fileID: 0}
   spaceShip: {fileID: 0}
   plantLand: {fileID: 0}
   secPerQuarter: 1
