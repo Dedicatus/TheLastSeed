@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlantDisplay : MonoBehaviour
 {
-    [SerializeField] private Sprite[] plantSprites;
+    [SerializeField] private GameObject[] plantObjects;
     [SerializeField] private Plant myPlantContoller;
 
     // Start is called before the first frame update
     void Awake()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = plantSprites[0];
+        plantObjects[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -21,11 +21,12 @@ public class PlantDisplay : MonoBehaviour
 
     public void nextStage()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = plantSprites[myPlantContoller.getCurStage()];
+        plantObjects[myPlantContoller.getCurStage() - 1].SetActive(false);
+        plantObjects[myPlantContoller.getCurStage()].SetActive(true);
     }
 
     public int getMaxStage()
     {
-        return plantSprites.Length;
+        return plantObjects.Length;
     }
 }

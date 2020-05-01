@@ -29,15 +29,15 @@ public class OxygenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (oxygenConsuming)
+        if (oxygenConsuming && myGameController.timePassing)
         {
             if (curOxygen > 0)
             {
                 curOxygen -= oxygenConsumption * Time.deltaTime;
-                if (curOxygen <300  && curOxygen >= 150) {
+                if (curOxygen < maxOxygen * 0.6f && curOxygen >= maxOxygen * 0.3f) {
                     myAudioController.SetBreathSound(1);
                 }
-                if (curOxygen < 150) {
+                if (curOxygen < maxOxygen * 0.3f) {
                     myAudioController.SetBreathSound(0);
                 }
             }
