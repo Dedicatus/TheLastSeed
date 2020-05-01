@@ -54,13 +54,14 @@ public class WeatherController : MonoBehaviour
 
     public Dictionary <ItemController.items, weatherList> weatherPairs;
 
-    public bool usedItemLatsPhase;
+    public bool usedItemLastPhase;
 
+    private bool firstTime;
 
     // Start is called before the first frame update
     void Awake()
     {
-        usedItemLatsPhase = false;
+        usedItemLastPhase = false;
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
         myUIController = GameObject.FindWithTag("GameController").transform.parent.Find("UIController").GetComponent<UIController>();
@@ -76,7 +77,7 @@ public class WeatherController : MonoBehaviour
         weatherPairs.Add( ItemController.items.Sprinkler, weatherList.HighTemp);
         weatherPairs.Add(ItemController.items.Lamp, weatherList.SandStorm);
 
-
+        firstTime = true;
 
         // IN CASE TO ADD MORE FEATURES 
         inAccident = false;
@@ -97,30 +98,38 @@ public class WeatherController : MonoBehaviour
     //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
     public void changeWeather()
     {
-        myAudioController.PlayWeatherChangeSound();
+        if (!firstTime) { myAudioController.PlayWeatherChangeSound(); }
         weatherList lastweather = curWeather;
-        if (usedItemLatsPhase)
+
+        if (firstTime) { curWeather = weatherList.Normal; }
+        else
         {
-            if (weatherPairs[myItemController.lastUsedItem] == curWeather)
+            if (usedItemLastPhase)
             {
-                do
+                if (weatherPairs[myItemController.lastUsedItem] == curWeather)
                 {
-                    curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+                    do
+                    {
+                        curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
 
-                } while (curWeather == lastweather);
+                    } while (curWeather == lastweather);
+                }
+
+                else
+                {
+                    curWeather = weatherPairs[myItemController.lastUsedItem];
+                }
             }
-
             else
             {
-                curWeather = weatherPairs[myItemController.lastUsedItem];
+                curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
+
             }
         }
-        else { 
-                    curWeather = (weatherList)Random.Range(0, System.Enum.GetValues(typeof(weatherList)).Length);
 
-        }
+        firstTime = false;
 
-        usedItemLatsPhase = false;
+        usedItemLastPhase = false;
         myItemController.itemInUse.sprite = null;
         myItemController.itemInUse.enabled = false;
 
@@ -228,8 +237,8 @@ public class WeatherController : MonoBehaviour
     }
 
     public void Initialization() { 
-        usedItemLatsPhase = false;
-
+        usedItemLastPhase = false;
+        firstTime = true;
     }
 }
 

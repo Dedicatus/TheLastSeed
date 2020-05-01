@@ -111,7 +111,7 @@ public class ItemController : MonoBehaviour
                 curItemUI.enabled = false;
                 slotIsEmpty = true;
                 lastUsedItem = curItem;
-                myWeatherController.usedItemLatsPhase = true;
+                myWeatherController.usedItemLastPhase = true;
 
             }
 

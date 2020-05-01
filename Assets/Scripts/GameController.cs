@@ -13,13 +13,16 @@ public class GameController : MonoBehaviour
     [Header("System")]
     public bool hasOpening;
     public bool hasTutorial;
+    public bool canChangeScene;
 
     [Header("Controller")]
     [SerializeField] private OxygenController myOxygenController;
     [SerializeField] private UIController myUIController;
     [SerializeField] private Plant myPlantController;
     [SerializeField] private WeatherController myWeatherController;
+    [SerializeField] private ItemController myItemController;
     [SerializeField] private AudioController myAudioController;
+    [SerializeField] private TutorialController myTutorialController;
 
 
     [Header("Scene")]
@@ -49,16 +52,19 @@ public class GameController : MonoBehaviour
 
     private void initialization()
     {
+        canChangeScene = true;
+        myPlantController.initialization();
+        myWeatherController.Initialization();
+        myItemController.Initialization();
         myOxygenController.oxygenConsuming = false;
+        myWeatherController.changeWeather();
         spaceShip.SetActive(true);
         plantLand.SetActive(false);
         curScene = GameScene.SpaceShip;
         timer = 0;
         curHour = dayStartHour;
-        myWeatherController.changeWeather();
         curMin = 0;
         curDay = 1;
-        myPlantController.initialization();
     }
 
     // Update is called once per frame
@@ -101,6 +107,7 @@ public class GameController : MonoBehaviour
 
     private void dayPass()
     {
+        myUIController.fadeScreen();
         curHour = dayStartHour;
         curMin = 0;
         ++curDay;
@@ -112,7 +119,9 @@ public class GameController : MonoBehaviour
 
     public void changeScene(GameScene scene)
     {
+        if (!canChangeScene) { return; }
         myAudioController.PlayOpenDoorSound();
+        myUIController.fadeScreen();
         switch (scene)
         {
             case GameScene.SpaceShip:
@@ -134,6 +143,7 @@ public class GameController : MonoBehaviour
             default:
                 break;
         }
+        canChangeScene = false;
     }
 
     public int getCurDay()
@@ -171,6 +181,7 @@ public class GameController : MonoBehaviour
 
     public void gameSucceed()
     {
+        myUIController.fadeScreen();
         timePassing = false;
         curState = GameState.Succeed;
         myUIController.showEndScreen(curState);
@@ -178,6 +189,7 @@ public class GameController : MonoBehaviour
 
     public void gameFailed()
     {
+        myUIController.fadeScreen();
         timePassing = false;
         curState = GameState.Failed;
         myUIController.showEndScreen(curState);
@@ -186,6 +198,13 @@ public class GameController : MonoBehaviour
     public void gameEnd()
     {
         curState = GameState.MainMenu;
+        myUIController.resetUI();
         initialization();
+    }
+
+    public void startTutorial()
+    {
+        myTutorialController.startTutorial();
+        hasTutorial = false;
     }
 }

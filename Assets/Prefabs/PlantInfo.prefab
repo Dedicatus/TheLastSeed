@@ -529,14 +529,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8980961277370935490}
   - component: {fileID: 8980961277370935492}
-  - component: {fileID: 1122016867499169274}
   m_Layer: 0
   m_Name: PlantInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8980961277370935490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -569,19 +568,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8980961277370935491}
   m_CullTransparentMesh: 0
---- !u!114 &1122016867499169274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8980961277370935491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e27ff2bb3c70634783be608b771896d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateText: {fileID: 8663814360745123922}
-  estimationText: {fileID: 183256357696830465}
-  vitalityBar: {fileID: 8827603479495979616}
-  myPlant: {fileID: 0}

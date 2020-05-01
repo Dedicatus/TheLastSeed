@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/UseItem
   guid: 08bdf94ffea400448765cd292031b4ee
   Banks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
   Path: event:/PickItem
   guid: 9aaaa8a63573714b800c216a13d25065
   Banks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -116,13 +116,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODBuild/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637238625219792208
+  lastModified: 637238696135629944
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 1004
   Exists: 1
 --- !u!114 &-5525366490292392140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Breath/OxygenValue
+  m_EditorClassIdentifier: 
+  Name: OxygenValue
+  Min: 0
+  Max: 3
+  Default: 2
+  Exists: 1
+--- !u!114 &-5121025331925541954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +172,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 2
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3411908653910136037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +205,7 @@ MonoBehaviour:
   Path: event:/Wrench
   guid: dc7f703856507148a0e42dabc563dd84
   Banks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -230,6 +247,24 @@ MonoBehaviour:
   Max: 3
   Default: 2
   Exists: 0
+--- !u!114 &-547546788529449345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODBuild/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637238998123682206
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -5856677196816517983}
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   EditorEvents:
   - {fileID: -8263215107816308329}
   - {fileID: 2893189716391874063}
@@ -254,10 +289,10 @@ MonoBehaviour:
   - {fileID: -1898086825319328267}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   StringsBanks:
   - {fileID: -5856677196816517983}
-  stringsBankWriteTime: 637238625219792208
+  stringsBankWriteTime: 637238696135629944
   cacheVersion: 3
 --- !u!114 &1628485018439826799
 MonoBehaviour:
@@ -276,7 +311,7 @@ MonoBehaviour:
   lastModified: 637238625219732162
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &2576797944978938222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +345,7 @@ MonoBehaviour:
   Path: event:/DoorOpen
   guid: 2a294551b11d6b4ba0048e9fbfd969c8
   Banks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -351,12 +386,12 @@ MonoBehaviour:
   Path: event:/Breath
   guid: b213583dffe4a941987741d41234799e
   Banks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3528959295721392832}
+  - {fileID: -5121025331925541954}
   MinDistance: 0
   MaxDistance: 0
   Length: 4505
@@ -375,7 +410,7 @@ MonoBehaviour:
   Path: event:/WeatherChange
   guid: 6025993a496eb7488256bee27eba7d65
   Banks:
-  - {fileID: 1628485018439826799}
+  - {fileID: -547546788529449345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

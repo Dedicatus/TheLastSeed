@@ -26,8 +26,16 @@ public class Opening : MonoBehaviour
         timer += Time.deltaTime;
         if (!opening.isPlaying && timer > waitTime)
         {
+            myGameController.hasOpening = false;
             gameObject.SetActive(false);
-            myGameController.timePassing = true;
+            if (myGameController.hasTutorial)
+            {
+                myGameController.startTutorial();
+            }
+            else
+            {
+                myGameController.timePassing = true;
+            }
         }
         
     }

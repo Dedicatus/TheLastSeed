@@ -13,6 +13,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject succeedMenu;
     [SerializeField] private GameObject failedMenu;
+    [SerializeField] private GameObject screenFadeMask;
+    [SerializeField] private Animator screenFadeAnimator;
 
     [Header("Clock")]
     [SerializeField] private TextMeshProUGUI hour1Text;
@@ -24,14 +26,14 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dateText;
 
     [Header("Oxygen")]
-    [SerializeField] private Animator oxygenBarAnimation;
+    [SerializeField] private Animator oxygenBarAnimator;
 
     [Header("Weather")]
     [SerializeField] private TextMeshProUGUI weatherText;
     [SerializeField] private TextMeshProUGUI intensityText;
     [SerializeField] private UnityEngine.UI.Image weatherImg;
     [SerializeField] private UnityEngine.UI.Image weatherBackgroundImg;
-    [SerializeField] private Animator weatherChangeAnimation;
+    [SerializeField] private Animator weatherChangeAnimator;
 
     [Header("Weather Sprites")]
     [SerializeField] private Sprite acidRainSprite;
@@ -48,6 +50,7 @@ public class UIController : MonoBehaviour
     {
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
+        mainMenu.SetActive(true);
     }
 
     // Update is called once per frame
@@ -65,19 +68,19 @@ public class UIController : MonoBehaviour
         int hour = myGameController.getCurHour();
         int min = myGameController.getCurMin();
 
-        if(hour >= 0 && hour < 10)
+        if (hour >= 0 && hour < 10)
         {
             hour1Text.text = "0";
             hour2Text.text = hour.ToString();
         }
         else
         {
-           //string[] s = hour.ToString().Split();
-            hour1Text.text = (hour/10).ToString();
-            hour2Text.text = (hour%10).ToString();
+            //string[] s = hour.ToString().Split();
+            hour1Text.text = (hour / 10).ToString();
+            hour2Text.text = (hour % 10).ToString();
         }
 
-        if(min >= 0 && min < 10)
+        if (min >= 0 && min < 10)
         {
             min1Text.text = "0";
             min2Text.text = min.ToString();
@@ -85,31 +88,31 @@ public class UIController : MonoBehaviour
 
         else
         {
-          // string[] s = min.ToString().Split();
-            min1Text.text = (min/10).ToString();
-            min2Text.text = (min%10).ToString();
+            // string[] s = min.ToString().Split();
+            min1Text.text = (min / 10).ToString();
+            min2Text.text = (min % 10).ToString();
         }
 
-       // timeText.text = myGameController.getCurHour().ToString() + ":" + myGameController.getCurMin().ToString("00");
+        // timeText.text = myGameController.getCurHour().ToString() + ":" + myGameController.getCurMin().ToString("00");
     }
 
     public void updateUI(int targetScene)
     {
-        if(targetScene == (int) GameController.GameScene.PlantLand)
+        if (targetScene == (int)GameController.GameScene.PlantLand)
         {
             plantInfoMenu.SetActive(true);
-            oxygenBarAnimation.SetTrigger("Exit");
+            oxygenBarAnimator.SetTrigger("Exit");
         }
         else
         {
             plantInfoMenu.SetActive(false);
-            oxygenBarAnimation.SetTrigger("Enter");
+            oxygenBarAnimator.SetTrigger("Enter");
         }
     }
 
     public void updateWeather(WeatherController.weatherList weather)
     {
-        switch((int)weather)
+        switch ((int)weather)
         {
             case 0:
                 weatherText.text = "Acid Rain";
@@ -151,13 +154,13 @@ public class UIController : MonoBehaviour
             intensityText.text += "I";
         }
 
-        weatherChangeAnimation.SetTrigger("Play");
+        weatherChangeAnimator.SetTrigger("Play");
     }
 
     public void gameStart()
     {
-        mainMenu.SetActive(false);
         if (myGameController.hasOpening) { openingVideo.SetActive(true); }
+        mainMenu.SetActive(false);
     }
 
     public void showEndScreen(GameController.GameState state)
@@ -181,5 +184,10 @@ public class UIController : MonoBehaviour
         mainMenu.SetActive(true);
         succeedMenu.SetActive(false);
         failedMenu.SetActive(false);
+    }
+
+    public void fadeScreen()
+    {
+        screenFadeMask.SetActive(true);
     }
 }
