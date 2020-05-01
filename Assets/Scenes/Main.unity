@@ -947,6 +947,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5323558460187736217, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 943063315}
     - target: {fileID: 6011396520400298970, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1131,6 +1136,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5119766793190549720}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5119766793190549738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8857332869464314193, guid: 43410e5545571084e87699dab2493aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5119766793190549720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5367033298358404774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1229,6 +1240,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5687160140758172436, guid: 32b221e791e713b4e82be9f97a397e6e,
         type: 3}
+      propertyPath: steps.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687160140758172436, guid: 32b221e791e713b4e82be9f97a397e6e,
+        type: 3}
       propertyPath: tutorialPanel
       value: 
       objectReference: {fileID: 1251801798}
@@ -1292,6 +1308,16 @@ PrefabInstance:
       propertyPath: steps.Array.data[9]
       value: 
       objectReference: {fileID: 5119766793190549726}
+    - target: {fileID: 5687160140758172436, guid: 32b221e791e713b4e82be9f97a397e6e,
+        type: 3}
+      propertyPath: steps.Array.data[10]
+      value: 
+      objectReference: {fileID: 5119766793190549738}
+    - target: {fileID: 5687160140758172436, guid: 32b221e791e713b4e82be9f97a397e6e,
+        type: 3}
+      propertyPath: nextStepCD
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5687160140758172437, guid: 32b221e791e713b4e82be9f97a397e6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1863,7 +1889,7 @@ PrefabInstance:
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: hasTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}

@@ -176,7 +176,11 @@ public class GameController : MonoBehaviour
         curState = GameState.InGame;
         initialization();
         myUIController.gameStart();
-        if (!hasOpening && !hasTutorial) { timePassing = true; }
+        if (!hasOpening)
+        {
+            if (hasTutorial) { startTutorial(); }
+            else { timePassing = true; }
+        }
     }
 
     public void gameSucceed()

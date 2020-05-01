@@ -11,23 +11,44 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private int spaceShipStartIndex = 4;
     [SerializeField] private int spaceShipEndIndex = 6;
 
+    [Header("Cooldown")]
+    [SerializeField] private float nextStepCD = 0.5f;
+    [SerializeField] private float nextStepTimer;
+
     [Header("Debug")]
     [SerializeField] private int curStep;
 
     private GameController myGameController;
+
+    private void Update()
+    {
+        if (nextStepTimer > 0f)
+        {
+            nextStepTimer -= Time.deltaTime;
+        }
+        else
+        {
+            nextStepTimer = 0f;
+        }
+    }
 
     public void startTutorial()
     {
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         tutorialPanel.SetActive(true);
         plantLand.SetActive(true);
+        spaceShip.SetActive(false);
         curStep = 0;
+        nextStepTimer = 0f;
         steps[curStep].SetActive(true);
     }
 
     public void nextStep()
     {
+        if (nextStepTimer > 0f) { return; }
+
         ++curStep;
+        nextStepTimer = nextStepCD;
         if (curStep >= steps.Length)
         {
             endTutorial();
