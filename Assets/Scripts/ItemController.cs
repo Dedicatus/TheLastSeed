@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemController : MonoBehaviour
 {
-    public enum items {Sprinkler, Lamp, Cover, Artificialsun}
+    public enum items { Sprinkler, Lamp, Cover, Artificialsun }
     [Header("GameObjects")]
     public GameObject sprinkler;
     public GameObject lamp;
@@ -13,7 +13,7 @@ public class ItemController : MonoBehaviour
     public GameObject artificialsun;
     [SerializeField] public Image curItemUI;
     [SerializeField] public Image itemInUse;
-    
+    [SerializeField] Sprite[] usedItemSprites;
     [Header("Controller")]
     [SerializeField] private Plant plant;
     [SerializeField] private WeatherController myWeatherController;
@@ -28,6 +28,8 @@ public class ItemController : MonoBehaviour
     private bool slotIsEmpty;
 
     public Dictionary<string, ItemController.items> itemPairs;
+    public Dictionary<items, Sprite> usedItemPairs;
+
     GameObject[] itemInHome;
 
 
@@ -38,11 +40,17 @@ public class ItemController : MonoBehaviour
         itemInHome = GameObject.FindGameObjectsWithTag("Item");
         itemPairs = new Dictionary<string, ItemController.items>();
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        usedItemPairs = new Dictionary<items, Sprite>();
 
         itemPairs.Add("Cooling", items.Sprinkler);
         itemPairs.Add("Lamp", items.Lamp);
         itemPairs.Add("Warming", items.Artificialsun);
         itemPairs.Add("Cover", items.Cover);
+
+        usedItemPairs.Add(items.Sprinkler, usedItemSprites[0]);
+        usedItemPairs.Add(items.Lamp, usedItemSprites[1]);
+        usedItemPairs.Add(items.Artificialsun, usedItemSprites[2]);
+        usedItemPairs.Add(items.Cover, usedItemSprites[3]);
 
 
         curItemUI.enabled = false;
@@ -71,16 +79,16 @@ public class ItemController : MonoBehaviour
                     case "SprinklerinHome":
                         break;
                     case "PurifierinHome":
-                     
+
                         break;
                     case "CoverinHome":
-                      
+
                         break;
                     case "PipeinHome":
-                       
+
                         break;
                     case "ArtificialsuninHome":
-                      
+
                         break;
 
                 }
@@ -89,14 +97,15 @@ public class ItemController : MonoBehaviour
         }
     }
 
-    public void ClickCurItem( ) {
+    public void ClickCurItem()
+    {
         if (myGameController.getCurScene() == GameController.GameScene.PlantLand)
         {
             if (!slotIsEmpty)
             {
                 myAudioController.PlayUseItemSound();
                 itemInUse.enabled = true;
-                itemInUse.sprite = curItemUI.sprite;
+                itemInUse.sprite = usedItemPairs[curItem];
                 plant.UseCurItems(curItem);
                 curItemUI.sprite = null;
                 curItemUI.enabled = false;
@@ -107,22 +116,25 @@ public class ItemController : MonoBehaviour
             }
 
         }
-       
+
     }
 
-    public void changeItem(string name) {
+    public void changeItem(string name)
+    {
         curItem = itemPairs[name];
         slotIsEmpty = false;
         curItemUI.enabled = true;
     }
 
-    public void Initialization() {
+    public void Initialization()
+    {
         curItemUI.sprite = null;
         curItemUI.enabled = false;
         slotIsEmpty = true;
         itemInUse.sprite = null;
         itemInUse.enabled = false;
-        for (int i = 0; i < itemInHome.Length; i++) {
+        for (int i = 0; i < itemInHome.Length; i++)
+        {
             itemInHome[i].GetComponent<ClickItem>().Initialization();
         }
 
