@@ -857,6 +857,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 990338441}
+    - target: {fileID: 230868890176344753, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 336.30005
+      objectReference: {fileID: 0}
+    - target: {fileID: 230868890176344753, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -28.199951
+      objectReference: {fileID: 0}
     - target: {fileID: 1235311120424093044, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -867,6 +877,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503694483}
+    - target: {fileID: 3006584116986784217, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006584116986784217, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3923761250718428077, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -972,6 +992,21 @@ PrefabInstance:
       propertyPath: myPlant
       value: 
       objectReference: {fileID: 1947659293}
+    - target: {fileID: 6931106167897416010, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931106167897416010, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931106167897416010, guid: 43410e5545571084e87699dab2493aba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7001403411884999834, guid: 43410e5545571084e87699dab2493aba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -161,6 +161,7 @@ public class UIController : MonoBehaviour
     {
         if (myGameController.hasOpening) { openingVideo.SetActive(true); }
         mainMenu.SetActive(false);
+        updateTimeText();
     }
 
     public void showEndScreen(GameController.GameState state)

@@ -29,4 +29,13 @@ public class PlantDisplay : MonoBehaviour
     {
         return plantObjects.Length;
     }
+
+    public void initialization()
+    {
+        foreach (GameObject plantObject in plantObjects)
+        {
+            plantObject.SetActive(false);
+        }
+        plantObjects[0].SetActive(true);
+    }
 }

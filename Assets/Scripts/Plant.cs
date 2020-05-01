@@ -44,6 +44,7 @@ public class Plant : MonoBehaviour
         curStage = 0;
         curHealth = initHealth;
         curState = PlantState.Growing;
+        myPlantDisplay.initialization();
     }
 
     // Update is called once per frame
@@ -67,9 +68,10 @@ public class Plant : MonoBehaviour
                     ++curStage;
                     myPlantDisplay.nextStage();
 
-                    if (curStage >= 4)
+                    if (curStage >= healthToStages.Length)
                     {
                         myGameController.gameSucceed();
+                        Debug.Log("Succeed");
                     }
                 }
             }
@@ -177,7 +179,14 @@ public class Plant : MonoBehaviour
     //UI
     public float getCurMaxHealth()
     {
-        return healthToStages[curStage];
+        if (curStage <= healthToStages.Length - 1)
+        {
+            return healthToStages[curStage];
+        }
+        else
+        {
+            return healthToStages[healthToStages.Length - 1];
+        }
     }
 
     public float getLastStageMaxHealth()

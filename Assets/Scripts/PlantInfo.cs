@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlantInfo : MonoBehaviour
 {
+    private GameController myGameController;
+
     [SerializeField] private Text stateText;
     [SerializeField] private Text estimationText;
     [SerializeField] private Image vitalityBar;
@@ -12,19 +14,25 @@ public class PlantInfo : MonoBehaviour
     [SerializeField] private Plant myPlant;
     private Plant.PlantState myState;
 
+
     // Start is called before the first frame update
     void Awake()
     {
+        myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         //myPlant = GameObject.FindWithTag("Plant").GetComponent<Plant>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (myGameController == null) { myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();  }
         //if (myPlant == null) { myPlant = GameObject.FindWithTag("Plant").GetComponent<Plant>(); }
-        updateStateInfo();
-        updateVitalityBar();
-        estimationText.text = myPlant.getEstimationText();
+        if (myGameController.timePassing)
+        {
+            updateStateInfo();
+            updateVitalityBar();
+            estimationText.text = myPlant.getEstimationText();
+        }
     }
 
     private void updateVitalityBar()
