@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private UIController myUIController;
     [SerializeField] private Plant myPlantController;
     [SerializeField] private WeatherController myWeatherController;
+    [SerializeField] private AudioController myAudioController;
+
 
     [Header("Scene")]
     [SerializeField] private GameObject spaceShip;
@@ -110,9 +112,11 @@ public class GameController : MonoBehaviour
 
     public void changeScene(GameScene scene)
     {
+        myAudioController.PlayOpenDoorSound();
         switch (scene)
         {
             case GameScene.SpaceShip:
+                myAudioController.StopBreathSound();
                 myUIController.updateUI((int)GameScene.SpaceShip);
                 myOxygenController.oxygenConsuming = false;
                 spaceShip.SetActive(true);
@@ -120,6 +124,7 @@ public class GameController : MonoBehaviour
                 curScene = GameScene.SpaceShip;
                 break;
             case GameScene.PlantLand:
+                myAudioController.PlayBreathSound();
                 myUIController.updateUI((int)GameScene.PlantLand);
                 myOxygenController.oxygenConsuming = true;
                 spaceShip.SetActive(false);

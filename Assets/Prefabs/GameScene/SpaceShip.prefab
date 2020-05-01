@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4919982355735895046}
   m_Layer: 0
   m_Name: Lamp
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   mask: {fileID: 4130668606535468756}
   myItemController: {fileID: 0}
   myGameController: {fileID: 0}
+  myAudioController: {fileID: 0}
   accerateValue: 0
 --- !u!1 &426933363245070935
 GameObject:
@@ -397,7 +398,7 @@ GameObject:
   - component: {fileID: 5538303983678704487}
   m_Layer: 0
   m_Name: Cover
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   mask: {fileID: 6007568301101203448}
   myItemController: {fileID: 0}
   myGameController: {fileID: 0}
+  myAudioController: {fileID: 0}
   accerateValue: 0
 --- !u!1 &1364170803932100911
 GameObject:
@@ -721,7 +723,7 @@ GameObject:
   - component: {fileID: 1882499935864691965}
   m_Layer: 0
   m_Name: Cooling
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -853,6 +855,7 @@ MonoBehaviour:
   mask: {fileID: 7231651808627980230}
   myItemController: {fileID: 0}
   myGameController: {fileID: 0}
+  myAudioController: {fileID: 0}
   accerateValue: 0
 --- !u!1 &4482236444477774823
 GameObject:
@@ -1251,7 +1254,7 @@ GameObject:
   - component: {fileID: 2968383059834073338}
   m_Layer: 0
   m_Name: Warming
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1383,4 +1386,5 @@ MonoBehaviour:
   mask: {fileID: 8464504715080586262}
   myItemController: {fileID: 0}
   myGameController: {fileID: 0}
+  myAudioController: {fileID: 0}
   accerateValue: 0

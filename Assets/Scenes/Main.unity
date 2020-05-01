@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &146076711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5819775714806555491, guid: c822e60e05890e549b6ede4b153cc541,
+    type: 3}
+  m_PrefabInstance: {fileID: 1733495683221935947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dee53e431698bf45818e3fc4553b39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &146076712 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+    type: 3}
+  m_PrefabInstance: {fileID: 1733495683221935947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &165855657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7591043602241289498, guid: 31ea8c37761cf6c4cadfb577fe73756a,
@@ -306,6 +324,7 @@ Transform:
   - {fileID: 2098837380}
   - {fileID: 503694482}
   - {fileID: 1947659292}
+  - {fileID: 146076712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -628,6 +647,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c201464c1f2b8f54ca4af582d2898556, type: 3}
+--- !u!1001 &1733495683221935947
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1224790934}
+    m_Modifications:
+    - target: {fileID: 3531228262807096933, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323907887551581872, guid: c822e60e05890e549b6ede4b153cc541,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c822e60e05890e549b6ede4b153cc541, type: 3}
 --- !u!1001 &4723226796930235960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -945,11 +1033,6 @@ PrefabInstance:
       propertyPath: myPlantDisplay
       value: 
       objectReference: {fileID: 1532374615}
-    - target: {fileID: 5367033297485327035, guid: 188d739c3d475fd4a96fc514b99e8067,
-        type: 3}
-      propertyPath: HealthRecover
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5367033297485327037, guid: 188d739c3d475fd4a96fc514b99e8067,
         type: 3}
       propertyPath: m_Name
@@ -989,11 +1072,6 @@ PrefabInstance:
       propertyPath: cover
       value: 
       objectReference: {fileID: 637971677}
-    - target: {fileID: 9022175294489509642, guid: 5ba32875e67da6943bfc20641359a3d7,
-        type: 3}
-      propertyPath: weatherChange
-      value: 
-      objectReference: {fileID: 565723316}
     - target: {fileID: 9031841064259888011, guid: 5ba32875e67da6943bfc20641359a3d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1122,11 +1200,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantLand
       objectReference: {fileID: 0}
-    - target: {fileID: 7591043600786894693, guid: 31ea8c37761cf6c4cadfb577fe73756a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ea8c37761cf6c4cadfb577fe73756a, type: 3}
 --- !u!1001 &8075241355137965482
@@ -1146,6 +1219,11 @@ PrefabInstance:
       propertyPath: myGameController
       value: 
       objectReference: {fileID: 990338441}
+    - target: {fileID: 1882499935864691965, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myAudioController
+      value: 
+      objectReference: {fileID: 146076711}
     - target: {fileID: 2968383059834073338, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: myItemController
@@ -1156,6 +1234,11 @@ PrefabInstance:
       propertyPath: myGameController
       value: 
       objectReference: {fileID: 990338441}
+    - target: {fileID: 2968383059834073338, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myAudioController
+      value: 
+      objectReference: {fileID: 146076711}
     - target: {fileID: 4919982355735895046, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: myItemController
@@ -1166,6 +1249,11 @@ PrefabInstance:
       propertyPath: myGameController
       value: 
       objectReference: {fileID: 990338441}
+    - target: {fileID: 4919982355735895046, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myAudioController
+      value: 
+      objectReference: {fileID: 146076711}
     - target: {fileID: 5538303983678704487, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: myItemController
@@ -1176,6 +1264,11 @@ PrefabInstance:
       propertyPath: myGameController
       value: 
       objectReference: {fileID: 990338441}
+    - target: {fileID: 5538303983678704487, guid: 1009ae9fc36f14743a7486edefebb5b4,
+        type: 3}
+      propertyPath: myAudioController
+      value: 
+      objectReference: {fileID: 146076711}
     - target: {fileID: 8075241354612427732, guid: 1009ae9fc36f14743a7486edefebb5b4,
         type: 3}
       propertyPath: m_Name
@@ -1326,7 +1419,7 @@ PrefabInstance:
       objectReference: {fileID: 1337065340}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
-      propertyPath: myPlant
+      propertyPath: myPlantController
       value: 
       objectReference: {fileID: 1947659293}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
@@ -1334,6 +1427,11 @@ PrefabInstance:
       propertyPath: myWeatherController
       value: 
       objectReference: {fileID: 2098837381}
+    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
+        type: 3}
+      propertyPath: myAudioController
+      value: 
+      objectReference: {fileID: 146076711}
     - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: spaceShip
@@ -1344,31 +1442,6 @@ PrefabInstance:
       propertyPath: plantLand
       value: 
       objectReference: {fileID: 1888654294}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: timePassing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: secPerQuarter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: opening
-      value: 
-      objectReference: {fileID: 1803598905}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: myPlantController
-      value: 
-      objectReference: {fileID: 1947659293}
-    - target: {fileID: 7599525173883503578, guid: 2219b871430e18849a8d8a4c343748cd,
-        type: 3}
-      propertyPath: hasOpening
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8760379080133693073, guid: 2219b871430e18849a8d8a4c343748cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1538,5 +1611,15 @@ PrefabInstance:
       propertyPath: myWeatherController
       value: 
       objectReference: {fileID: 2098837381}
+    - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
+        type: 3}
+      propertyPath: myGameController
+      value: 
+      objectReference: {fileID: 990338441}
+    - target: {fileID: 8818108282427236515, guid: 0120a4e2234db814da47c029d61bf62c,
+        type: 3}
+      propertyPath: myAudioController
+      value: 
+      objectReference: {fileID: 146076711}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0120a4e2234db814da47c029d61bf62c, type: 3}

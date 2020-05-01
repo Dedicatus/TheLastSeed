@@ -5,6 +5,8 @@ using UnityEngine;
 public class OxygenController : MonoBehaviour
 {
     private GameController myGameController;
+    private AudioController myAudioController;
+
 
     [Header("Variables")]
     [SerializeField] private float maxOxygen = 500f;
@@ -19,6 +21,8 @@ public class OxygenController : MonoBehaviour
     void Awake()
     {
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        myAudioController = GameObject.FindWithTag("GameController").transform.parent.Find("AudioController").GetComponent<AudioController>();
+
         curOxygen = initialOxygen;
     }
 
@@ -30,6 +34,12 @@ public class OxygenController : MonoBehaviour
             if (curOxygen > 0)
             {
                 curOxygen -= oxygenConsumption * Time.deltaTime;
+                if (curOxygen <300  && curOxygen >= 150) {
+                    myAudioController.SetBreathSound(1);
+                }
+                if (curOxygen < 150) {
+                    myAudioController.SetBreathSound(0);
+                }
             }
             else
             {
@@ -49,6 +59,12 @@ public class OxygenController : MonoBehaviour
         else
         {
             curOxygen += n;
+            if (curOxygen >= 150f && curOxygen < 300) {
+                myAudioController.SetBreathSound(1);
+            }
+            if (curOxygen >= 300) {
+                myAudioController.SetBreathSound(2);
+            }
         }
     }
 

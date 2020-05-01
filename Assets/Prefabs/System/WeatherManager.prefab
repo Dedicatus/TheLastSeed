@@ -45,8 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastTime: 0
   normalTime: 0
-  curWeather: 0
-  comingWeather: 0
   inAccident: 0
   weatherMassage: {fileID: 0}
   comingWeatherMessage: {fileID: 0}
@@ -65,4 +63,6 @@ MonoBehaviour:
   ColdDamLv2: 2
   ColdDamLv3: 3
   curLevel: 0
+  curWeather: 0
+  comingWeather: 0
   usedItemLatsPhase: 0

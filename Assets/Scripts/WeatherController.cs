@@ -20,6 +20,8 @@ public class WeatherController : MonoBehaviour
     private GameController myGameController;
     private ItemController myItemController;
     private UIController myUIController;
+    private AudioController myAudioController;
+
 
     [SerializeField] private Plant plant;
     [SerializeField] private GameObject cover;
@@ -62,6 +64,8 @@ public class WeatherController : MonoBehaviour
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         myItemController = GameObject.FindWithTag("GameController").transform.parent.Find("ItemController").GetComponent<ItemController>();
         myUIController = GameObject.FindWithTag("GameController").transform.parent.Find("UIController").GetComponent<UIController>();
+        myAudioController = GameObject.FindWithTag("GameController").transform.parent.Find("AudioController").GetComponent<AudioController>();
+
         comingWeather = weatherList.Normal;
         weatherMassage.text = "";
 
@@ -93,6 +97,7 @@ public class WeatherController : MonoBehaviour
     //GENERATE NEXT WEATHER AND INVOKE FUNCTIONS
     public void changeWeather()
     {
+        myAudioController.PlayWeatherChangeSound();
         weatherList lastweather = curWeather;
         if (usedItemLatsPhase)
         {
@@ -141,68 +146,13 @@ public class WeatherController : MonoBehaviour
         weatherMassage.text = curWeather.ToString();
         comingWeatherMessage.text = comingWeather.ToString();
 
-        //Debug.Log(curWeather.ToString());
-        //switch (curWeather)
-        //{
-        //    case weatherList.AcidRain:
-        //        fooAcidRain();
-        //        break;
-        //    case weatherList.Cold:
-        //        fooCold();
-        //        break;
-        //    case weatherList.HighTemp:
-        //        fooHighTemp();
-        //        break;
-        //    case weatherList.Normal:
-        //        backNormal();
-        //        break;
-        //    case weatherList.SandStorm:
-        //        fooSandStorm();
-        //        break;
-        //}
+  
 
         plant.applyWeatherCondition();
         myUIController.updateWeather(curWeather);
     }
 
-    // FUNCTIONS HANDLING DIFFERENT WEATHER CHANGE
-    void backNormal()
-    {
-        return;
-    }
 
-    void fooAcidRain()
-    {
-        //plant.addHealth(-10);
-
-        // myItemController.cover.SetActive(false);
-       cover.SetActive(false);
-
-
-    }
-
-    void fooSandStorm()
-    {
-        //plant.addHealth(-10);
-
-        myItemController.lamp.SetActive(false);
-
-    }
-
-    void fooHighTemp()
-    {
-        //plant.addHealth(-10);
-
-        myItemController.sprinkler.SetActive(false);
-
-    }
-
-    void fooCold()
-    {
-        //plant.addHealth(-10);
-
-        myItemController.artificialsun.SetActive(false);
-    }
 
     public weatherList GetCurWeather()
     {
@@ -275,6 +225,11 @@ public class WeatherController : MonoBehaviour
 
         }
         return curDamage;
+    }
+
+    public void Initialization() { 
+        usedItemLatsPhase = false;
+
     }
 }
 

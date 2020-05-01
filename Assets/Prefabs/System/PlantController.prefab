@@ -58,10 +58,9 @@ MonoBehaviour:
   lv1DebuffChance: 1
   lv2DebuffChance: 1
   lv3DebuffChance: 1
-  stageDayGap: 3
   initHealth: 100
-  HealthRecover: 20
-  myStatus: 0
+  HealthRecover: 1
+  curState: 0
   curDamage: 0
   maxStage: 0
   curStage: 0

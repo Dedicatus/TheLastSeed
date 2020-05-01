@@ -129,6 +129,7 @@ public class Plant : MonoBehaviour
         {
             switch (myWeatherController.GetCurWeather())
             {
+
                 case WeatherController.weatherList.Normal:
                     curState = PlantState.Growing;
                     break;

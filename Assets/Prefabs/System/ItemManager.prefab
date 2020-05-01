@@ -52,5 +52,6 @@ MonoBehaviour:
   plant: {fileID: 0}
   myWeatherController: {fileID: 0}
   myGameController: {fileID: 0}
+  myAudioController: {fileID: 0}
   lastUsedItem: 0
   curItem: 0

@@ -18,7 +18,9 @@ public class ItemController : MonoBehaviour
     [SerializeField] private Plant plant;
     [SerializeField] private WeatherController myWeatherController;
     [SerializeField] private GameController myGameController;
-    
+    [SerializeField] private AudioController myAudioController;
+
+
 
     public items lastUsedItem;
     public items curItem;
@@ -26,12 +28,14 @@ public class ItemController : MonoBehaviour
     private bool slotIsEmpty;
 
     public Dictionary<string, ItemController.items> itemPairs;
+    GameObject[] itemInHome;
 
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        itemInHome = GameObject.FindGameObjectsWithTag("Item");
         itemPairs = new Dictionary<string, ItemController.items>();
         myGameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 
@@ -44,6 +48,8 @@ public class ItemController : MonoBehaviour
         curItemUI.enabled = false;
         slotIsEmpty = true;
         myWeatherController = GameObject.FindWithTag("GameController").transform.parent.Find("WeatherController").GetComponent<WeatherController>();
+        myAudioController = GameObject.FindWithTag("GameController").transform.parent.Find("AudioController").GetComponent<AudioController>();
+
 
     }
 
@@ -88,6 +94,7 @@ public class ItemController : MonoBehaviour
         {
             if (!slotIsEmpty)
             {
+                myAudioController.PlayUseItemSound();
                 itemInUse.enabled = true;
                 itemInUse.sprite = curItemUI.sprite;
                 plant.UseCurItems(curItem);
@@ -109,6 +116,16 @@ public class ItemController : MonoBehaviour
         curItemUI.enabled = true;
     }
 
+    public void Initialization() {
+        curItemUI.sprite = null;
+        curItemUI.enabled = false;
+        slotIsEmpty = true;
+        itemInUse.sprite = null;
+        itemInUse.enabled = false;
+        for (int i = 0; i < itemInHome.Length; i++) {
+            itemInHome[i].GetComponent<ClickItem>().Initialization();
+        }
 
+    }
 
 }

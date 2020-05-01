@@ -13,12 +13,15 @@ public class ClickItem : MonoBehaviour
     private float coolDownTimer;
     [SerializeField] private ItemController myItemController;
     [SerializeField] private GameController myGameController;
+    [SerializeField] private AudioController myAudioController;
+
 
     [SerializeField] private float accerateValue;
 
     // Start is called before the first frame update
     void Awake()
     {
+        coolDownTimer = 0;
         accerateValue = 3f;
         isCoolDown = false;
         mask = this.transform.Find("Mask").GetComponent<Image>();
@@ -50,6 +53,7 @@ public class ClickItem : MonoBehaviour
     public void Click()
     {
         if (isCoolDown != true) {
+            myAudioController.PlayPickSound();
             isCoolDown = true;
             mask.fillAmount = 1;
             myItemController.curItemUI.sprite = this.GetComponent<Image>().sprite;
@@ -59,8 +63,15 @@ public class ClickItem : MonoBehaviour
 
     public void SpeedUp() {
 
-        if (isCoolDown) { 
+        if (isCoolDown) {
+            myAudioController.PlayWrenchSound();
             coolDownTimer += accerateValue;
         }
+    }
+
+    public void Initialization() { 
+        isCoolDown = false;
+        mask.fillAmount = 0;
+        coolDownTimer = 0;
     }
 }

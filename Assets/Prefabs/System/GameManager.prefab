@@ -43,17 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5283ba1aa51098a4497b324a6a59fedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curState: 0
+  hasOpening: 0
+  hasTutorial: 0
   myOxygenController: {fileID: 0}
   myUIController: {fileID: 0}
-  myPlant: {fileID: 0}
+  myPlantController: {fileID: 0}
   myWeatherController: {fileID: 0}
+  myAudioController: {fileID: 0}
   spaceShip: {fileID: 0}
   plantLand: {fileID: 0}
-  secPerQuarter: 3
+  secPerQuarter: 1
   dayStartHour: 7
   dayEndHour: 23
   curDay: 1
-  dailyOxygenSupply: 200
   timePassing: 0
   timer: 0
   curHour: 0
