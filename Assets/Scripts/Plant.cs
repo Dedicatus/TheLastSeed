@@ -65,6 +65,8 @@ public class Plant : MonoBehaviour
                 if (curHealth >= healthToStages[curStage])
                 {
                     ++curStage;
+                    myPlantDisplay.nextStage();
+
                     if (curStage >= 4)
                     {
                         myGameController.gameSucceed();

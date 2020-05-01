@@ -43,7 +43,7 @@ public class AudioController : MonoBehaviour
         useItemInstance = FMODUnity.RuntimeManager.CreateInstance(useItemEvent);
         weatherChangeInstance = FMODUnity.RuntimeManager.CreateInstance(weatherChangeEvent);
         breathInstance = FMODUnity.RuntimeManager.CreateInstance(breathEvent);
-
+        masterBus.setVolume(0.4f);
 
     }
 
@@ -94,5 +94,8 @@ public class AudioController : MonoBehaviour
         breathInstance.setParameterByID(pARAMETEROxygenId, OxygenValue);
     }
 
+    public void SetVolume(float volume) {
+        masterBus.setVolume(volume);
+    }
 
 }
